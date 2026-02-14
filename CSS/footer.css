@@ -1,0 +1,208 @@
+/* =============================
+   VARIABLES (si no las tienes en otro archivo)
+============================= */
+:root{
+  --text: #1A1C20;
+  --muted: #6A6F7A;
+
+  /* tu paleta cute */
+  --accent-color: #C7D60A;      /* maíz suave (solo acento) */
+  --pink: #FFE8F1;
+  --blue: #E8F4FF;
+  --mint: #E9FAF2;
+
+  /* hover para redes (cute) */
+  --social-hover: #E28AA8;      /* rosa cálido */
+  --social-bg-hover: rgba(226, 138, 168, .14);
+
+  /* superficies */
+  --footer-bg: rgba(255,255,255,.78);
+  --footer-border: rgba(26,28,32,.10);
+  --footer-shadow: 0 -6px 18px rgba(0,0,0,.06);
+}
+
+/* =============================
+   BODY / LAYOUT (tu parte)
+============================= */
+html{ height: 100%; }
+
+body{
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  background: linear-gradient(to bottom right, #F7EFEF, #d1f5f2);
+
+  display: flex;
+  flex-direction: column;
+}
+
+#site-header{ flex-shrink: 0; }
+main, .contacto{ flex: 1 0 auto; }
+
+#site-footer{
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+/* =============================
+   FOOTER (NUEVO Y LIMPIO)
+============================= */
+footer.footer{
+  width: 100%;
+  background: var(--footer-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-top: 1px solid var(--footer-border);
+  box-shadow: var(--footer-shadow);
+}
+
+/* Links del footer (ya NO se van a verde) */
+footer.footer a{
+  color: var(--text) !important;
+  text-decoration: none;
+}
+
+footer.footer a:hover{
+  color: var(--social-hover) !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Iconos de redes: heredamos el color del link */
+footer.footer .nav-social .social-link{
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(26,28,32,.12);
+  background: rgba(255,255,255,.6);
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
+  color: var(--text) !important; /* <- clave */
+}
+
+footer.footer .nav-social .social-link i{
+  font-size: 1.25rem;
+  color: currentColor !important; /* <- clave */
+}
+
+/* Hover cute (rosa/menta/azul), NO maíz */
+footer.footer .nav-social .social-link:hover{
+  transform: translateY(-1px);
+  background: var(--social-bg-hover);
+  border-color: rgba(226, 138, 168, .40);
+  color: var(--social-hover) !important;
+}
+
+/* Texto auxiliar */
+footer.footer .text-muted,
+footer.footer .small{
+  color: var(--muted) !important;
+}
+
+/* Barra inferior */
+.footer-bottom{
+  background: rgba(255,255,255,.55);
+  border-top: 1px solid rgba(26,28,32,.08);
+  text-align: center;
+  padding: 10px 0;
+  font-family: var(--fontText, "Nunito Sans", sans-serif);
+  font-size: 0.9rem;
+}
+
+/* =============================
+   LOGOS light/dark
+============================= */
+.logo-light, .logo-dark{ display: inline-block; }
+.logo-dark{ display: none; }
+
+html[data-bs-theme="dark"] .logo-light{ display: none; }
+html[data-bs-theme="dark"] .logo-dark{ display: inline-block; }
+
+/* Logo hover suave */
+.footer .footer-logo,
+footer.footer .logo{
+  transition: transform .15s ease;
+}
+footer.footer .logo:hover{
+  transform: scale(1.06);
+}
+
+/* =============================
+   GRID SIMÉTRICO (tu layout 3 columnas)
+============================= */
+.footer .footer-logo{ width: 100px; height: auto; }
+
+@media (min-width: 768px){
+  .footer-col-left{ text-align: left; }
+  .footer-col-center{ text-align: center; }
+  .footer-col-right{ text-align: right; }
+
+  .footer-pdf{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    max-width: 320px;
+  }
+
+  .footer-pdf p{
+    text-align: right;
+    margin: 0;
+  }
+}
+
+@media (max-width: 767.98px){
+  .footer-col-left,
+  .footer-col-center,
+  .footer-col-right{
+    text-align: center;
+  }
+
+  .footer-pdf{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .footer-pdf p{ text-align: center; }
+}
+
+/* =============================
+   DARK MODE footer
+============================= */
+html[data-bs-theme="dark"] footer.footer{
+  background: rgba(15,17,21,.72);
+  border-top-color: rgba(255,255,255,.10);
+  box-shadow: 0 -10px 28px rgba(0,0,0,.35);
+}
+
+html[data-bs-theme="dark"] footer.footer a{
+  color: #E7E9EE !important;
+}
+
+html[data-bs-theme="dark"] footer.footer a:hover{
+  color: #FFD1E1 !important; /* rosa suave */
+}
+
+html[data-bs-theme="dark"] footer.footer .nav-social .social-link{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.14);
+  color: #E7E9EE !important;
+}
+
+html[data-bs-theme="dark"] footer.footer .nav-social .social-link:hover{
+  background: rgba(255,209,225,.12);
+  border-color: rgba(255,209,225,.35);
+  color: #FFD1E1 !important;
+}
+
+html[data-bs-theme="dark"] .footer-bottom{
+  background: rgba(255,255,255,.04);
+  border-top-color: rgba(255,255,255,.08);
+}
