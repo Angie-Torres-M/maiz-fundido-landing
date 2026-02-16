@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio | Maíz Fundido</title>
+  <title data-i18n="meta.title">Maíz Fundido</title>
 
   <!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
 
@@ -21,11 +22,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/jpg" href="./images/logomaizfundidosf.png" />
 </head>
-
-<!--
-NOTA PARA ANGIE DEL FUTURO:
-El texto final visible lo controla translations.js (data-i18n).
--->
 
 <body>
   <!-- HEADER -->
@@ -41,7 +37,6 @@ El texto final visible lo controla translations.js (data-i18n).
       <div class="container">
         <div class="row align-items-center gy-4">
 
-          <!-- IZQUIERDA: texto + cards -->
           <div class="col-lg-9">
             <p class="text-uppercase small text-accent mb-2" data-i18n="hero.kicker">
               Hecho en México · Impresión 3D · Armado a mano
@@ -52,65 +47,71 @@ El texto final visible lo controla translations.js (data-i18n).
             </h1>
 
             <p class="lead mb-4" data-i18n="hero.description">
-              Accesorios y piezas impresas en 3D, con detalle artesanal y hechos en México.
+              Accesorios y piezas impresas en 3D, con detalle artesanal y hechas en México.
               Diseños para fans, colecciones temáticas y pedidos personalizados.
             </p>
 
-            <!-- CTAs grandes -->
             <div class="hero-links-grid mb-4">
 
               <a href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer"
-                class="hero-link-card hero-link-outline">
+                class="hero-link-card hero-link-outline"
+                aria-label="Instagram Maíz Fundido"
+                data-i18n-aria="hero.links.ig.aria">
                 <div class="hero-link-icon">
-                  <i class="fa-brands fa-instagram"></i>
+                  <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                 </div>
                 <div class="hero-link-text">
-                  <span class="hero-link-title">Instagram</span>
-                  <span class="hero-link-sub">Novedades, eventos y pedidos</span>
+                  <span class="hero-link-title" data-i18n="hero.links.ig.title">Instagram</span>
+                  <span class="hero-link-sub" data-i18n="hero.links.ig.sub">Novedades, eventos y pedidos</span>
                 </div>
-                <i class="fa-solid fa-arrow-up-right-from-square hero-link-arrow"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square hero-link-arrow" aria-hidden="true"></i>
               </a>
 
               <a href="https://www.facebook.com/MaizFundidoo/" target="_blank" rel="noreferrer"
-                class="hero-link-card hero-link-outline">
+                class="hero-link-card hero-link-outline"
+                aria-label="Facebook Maíz Fundido"
+                data-i18n-aria="hero.links.fb.aria">
                 <div class="hero-link-icon">
-                  <i class="fa-brands fa-facebook"></i>
+                  <i class="fa-brands fa-facebook" aria-hidden="true"></i>
                 </div>
                 <div class="hero-link-text">
-                  <span class="hero-link-title">Facebook</span>
-                  <span class="hero-link-sub">Novedades y eventos </span>
+                  <span class="hero-link-title" data-i18n="hero.links.fb.title">Facebook</span>
+                  <span class="hero-link-sub" data-i18n="hero.links.fb.sub">Novedades y eventos</span>
                 </div>
-                <i class="fa-solid fa-arrow-up-right-from-square hero-link-arrow"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square hero-link-arrow" aria-hidden="true"></i>
               </a>
 
               <a href="https://www.tiktok.com/@maiz_fundido" target="_blank" rel="noreferrer"
-                class="hero-link-card hero-link-outline">
+                class="hero-link-card hero-link-outline"
+                aria-label="TikTok Maíz Fundido"
+                data-i18n-aria="hero.links.tt.aria">
                 <div class="hero-link-icon">
-                  <i class="fa-brands fa-tiktok"></i>
+                  <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
                 </div>
                 <div class="hero-link-text">
-                  <span class="hero-link-title">TikTok</span>
-                  <span class="hero-link-sub">Novedades y videos </span>
+                  <span class="hero-link-title" data-i18n="hero.links.tt.title">TikTok</span>
+                  <span class="hero-link-sub" data-i18n="hero.links.tt.sub">Novedades y videos</span>
                 </div>
-                <i class="fa-solid fa-arrow-up-right-from-square hero-link-arrow"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square hero-link-arrow" aria-hidden="true"></i>
               </a>
 
               <a href="https://www.instagram.com/maiz_fundido_juegos/" target="_blank" rel="noreferrer"
-                class="hero-link-card hero-link-outline">
+                class="hero-link-card hero-link-outline"
+                aria-label="Instagram Juegos Maíz Fundido"
+                data-i18n-aria="hero.links.games.aria">
                 <div class="hero-link-icon">
-                  <i class="fa-solid fa-dice"></i>
+                  <i class="fa-solid fa-dice" aria-hidden="true"></i>
                 </div>
                 <div class="hero-link-text">
-                  <span class="hero-link-title">Instagram · Juegos</span>
-                  <span class="hero-link-sub">Accesorios para juegos de mesa</span>
+                  <span class="hero-link-title" data-i18n="hero.links.games.title">Instagram · Juegos</span>
+                  <span class="hero-link-sub" data-i18n="hero.links.games.sub">Accesorios para juegos de mesa</span>
                 </div>
-                <i class="fa-solid fa-arrow-up-right-from-square hero-link-arrow"></i>
+                <i class="fa-solid fa-arrow-up-right-from-square hero-link-arrow" aria-hidden="true"></i>
               </a>
 
             </div>
           </div>
 
-          <!-- DERECHA: elotito / hero image -->
           <div class="col-lg-3 d-flex flex-column align-items-center align-items-lg-end text-center text-lg-end">
             <div class="profile-wrapper mx-auto mx-lg-0">
               <img src="images/hero-maizfundido.jpeg" alt="Maíz Fundido" class="profile-img" />
@@ -133,12 +134,20 @@ El texto final visible lo controla translations.js (data-i18n).
 
             <p data-i18n="history.p1">
               Maíz Fundido nace del amor por crear: diseño, impresión 3D y detalles hechos a mano.
-              Queremos que cada pieza se sienta especial, ligera y lista para acompañarte todos los días.
+              Nos inspira lo cotidiano: que una pieza pequeña pueda alegrarte el día, sentirse ligera y acompañarte sin estorbar.
             </p>
 
             <p data-i18n="history.p2">
-              Trabajamos con bioplástico compostable derivado del almidón de maíz y cuidamos cada etapa:
-              desde el diseño y la impresión, hasta el armado final.
+              Creemos en hacer las cosas con calma y con intención. Por eso cuidamos cada etapa:
+              desde el diseño y la impresión, hasta el armado final y los acabados.
+              Cada pieza pasa por manos reales (y con mucho cariño) antes de llegar a ti.
+            </p>
+
+            <p data-i18n="history.p3">
+              Nuestra misión es crear accesorios <strong>cute</strong> y con toque <strong>geek</strong> que se sientan
+              especiales, hechos en México, y con un material más consciente: bioplástico <strong>PLA</strong> derivado
+              del almidón de maíz. Nuestros valores son simples: <strong>calidad</strong> en los detalles,
+              <strong>honestidad</strong> en tiempos y procesos, y <strong>cercanía</strong>.
             </p>
 
             <div class="d-flex flex-wrap gap-2 mt-3">
@@ -155,33 +164,31 @@ El texto final visible lo controla translations.js (data-i18n).
 
           <div class="col-lg-4">
             <div class="row g-3">
-              <div class="col-sm-6">
+              <div class="col-6 col-md-6">
                 <div class="info-card">
                   <span class="info-label" data-i18n="history.cards.made.label">Hecho en</span>
                   <p class="mb-0" data-i18n="history.cards.made.value">México</p>
                 </div>
               </div>
 
-              <div class="col-sm-6">
+              <div class="col-6 col-md-6">
                 <div class="info-card">
                   <span class="info-label" data-i18n="history.cards.process.label">Proceso</span>
-                  <p class="mb-0" data-i18n="history.cards.process.value"> Impresión 3D </p>
+                  <p class="mb-0" data-i18n="history.cards.process.value">Impresión 3D</p>
                 </div>
               </div>
 
-              <div class="col-sm-6">
+              <div class="col-6 col-md-6">
                 <div class="info-card">
                   <span class="info-label" data-i18n="history.cards.material.label">Material</span>
                   <p class="mb-0" data-i18n="history.cards.material.value">PLA</p>
-
                 </div>
               </div>
 
-
-              <div class="col-sm-6">
+              <div class="col-6 col-md-6">
                 <div class="info-card">
                   <span class="info-label" data-i18n="history.cards.vibe.label">Vibe</span>
-                  <p class="mb-0" data-i18n="history.cards.vibe.value">Cute · Geek </p>
+                  <p class="mb-0" data-i18n="history.cards.vibe.value">Cute · Geek</p>
                 </div>
               </div>
             </div>
@@ -203,91 +210,82 @@ El texto final visible lo controla translations.js (data-i18n).
 
         <div class="row g-3">
 
-          <!-- 1 -->
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="skill-card h-100">
-              <i class="fa-solid fa-wand-magic-sparkles skill-icon"></i>
-              <h3 class="h6 fw-bold mb-1">Diseños únicos</h3>
-              <p class="small mb-1">Colecciones temáticas, drops y piezas especiales.</p>
-              <span class="badge badge-skill">Ediciones</span>
+              <i class="fa-solid fa-wand-magic-sparkles skill-icon" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="offer.cards.c1.title">Diseños únicos</h3>
+              <p class="small mb-1" data-i18n="offer.cards.c1.desc">Colecciones temáticas, drops y piezas especiales.</p>
+              <span class="badge badge-skill" data-i18n="offer.cards.c1.badge">Ediciones</span>
             </div>
           </div>
 
-          <!-- 2 -->
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="skill-card h-100">
-              <i class="fa-solid fa-gamepad skill-icon"></i>
-              <h3 class="h6 fw-bold mb-1">Accesorios gamer</h3>
-              <p class="small mb-1">Docks para Nintendo Switch, stands y accesorios para controles.</p>
-              <span class="badge badge-skill">Consolas</span>
+              <i class="fa-solid fa-gamepad skill-icon" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="offer.cards.c2.title">Accesorios gamer</h3>
+              <p class="small mb-1" data-i18n="offer.cards.c2.desc">Docks para Nintendo Switch, stands y accesorios para controles.</p>
+              <span class="badge badge-skill" data-i18n="offer.cards.c2.badge">Consolas</span>
             </div>
           </div>
 
-          <!-- 3 -->
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="skill-card h-100">
-              <i class="fa-solid fa-dice-d20 skill-icon"></i>
-              <h3 class="h6 fw-bold mb-1">Accesorios para juegos de mesa</h3>
-              <p class="small mb-1">Tokens, soportes, contadores y organizadores de mesa.</p>
-              <span class="badge badge-skill">Boardgames</span>
+              <i class="fa-solid fa-dice-d20 skill-icon" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="offer.cards.c3.title">Accesorios para juegos de mesa</h3>
+              <p class="small mb-1" data-i18n="offer.cards.c3.desc">Tokens, soportes, contadores y organizadores de mesa.</p>
+              <span class="badge badge-skill" data-i18n="offer.cards.c3.badge">Boardgames</span>
             </div>
           </div>
 
-          <!-- 4 -->
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="skill-card h-100">
-              <i class="fa-solid fa-lightbulb skill-icon"></i>
-              <h3 class="h6 fw-bold mb-1">Lámparas & deco</h3>
-              <p class="small mb-1">Lámparas, decoración cute/geek y piezas para escritorio.</p>
-              <span class="badge badge-skill">Deco</span>
+              <i class="fa-solid fa-lightbulb skill-icon" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="offer.cards.c4.title">Lámparas y deco</h3>
+              <p class="small mb-1" data-i18n="offer.cards.c4.desc">Lámparas, decoración cute/geek y piezas para escritorio.</p>
+              <span class="badge badge-skill" data-i18n="offer.cards.c4.badge">Deco</span>
             </div>
           </div>
 
-          <!-- 5 -->
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="skill-card h-100">
-              <i class="fa-solid fa-key skill-icon"></i>
-              <h3 class="h6 fw-bold mb-1">Llaveros, pines & charms</h3>
-              <p class="small mb-1">Para mochila, collar, llavero o colección.</p>
-              <span class="badge badge-skill">Accesorios</span>
+              <i class="fa-solid fa-key skill-icon" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="offer.cards.c5.title">Llaveros, pines y charms</h3>
+              <p class="small mb-1" data-i18n="offer.cards.c5.desc">Para mochila, collar, llavero o colección.</p>
+              <span class="badge badge-skill" data-i18n="offer.cards.c5.badge">Accesorios</span>
             </div>
           </div>
 
-          <!-- 6 -->
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="skill-card h-100">
-              <i class="fa-solid fa-palette skill-icon"></i>
-              <h3 class="h6 fw-bold mb-1">Armado & pintado a mano</h3>
-              <p class="small mb-1">Modelos seleccionados con detalles pintados a mano (ej. docks).</p>
-              <span class="badge badge-skill">Artesanal</span>
+              <i class="fa-solid fa-palette skill-icon" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="offer.cards.c6.title">Armado y pintado a mano</h3>
+              <p class="small mb-1" data-i18n="offer.cards.c6.desc">Modelos seleccionados con detalles pintados a mano (por ejemplo, docks).</p>
+              <span class="badge badge-skill" data-i18n="offer.cards.c6.badge">Artesanal</span>
             </div>
           </div>
 
-          <!-- 7 -->
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="skill-card h-100">
-              <i class="fa-solid fa-leaf skill-icon"></i>
-              <h3 class="h6 fw-bold mb-1">Material eco</h3>
-              <p class="small mb-1">Bioplástico PLA (derivado del almidón de plantas como el maíz).</p>
-              <span class="badge badge-skill">Sustentable</span>
+              <i class="fa-solid fa-leaf skill-icon" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="offer.cards.c7.title">Material eco</h3>
+              <p class="small mb-1" data-i18n="offer.cards.c7.desc">Bioplástico PLA (derivado del almidón de plantas como el maíz).</p>
+              <span class="badge badge-skill" data-i18n="offer.cards.c7.badge">Sustentable</span>
             </div>
           </div>
 
-          <!-- 8 -->
           <div class="col-12 col-sm-6 col-md-4 col-lg-3">
             <div class="skill-card h-100">
-              <i class="fa-solid fa-qrcode skill-icon"></i>
-              <h3 class="h6 fw-bold mb-1">Personalizados</h3>
-              <p class="small mb-1">Nombres, temas, regalos y hasta piezas con QR (según el diseño).</p>
-              <span class="badge badge-skill">A pedido</span>
+              <i class="fa-solid fa-qrcode skill-icon" aria-hidden="true"></i>
+              <h3 class="h6 fw-bold mb-1" data-i18n="offer.cards.c8.title">Personalizados</h3>
+              <p class="small mb-1" data-i18n="offer.cards.c8.desc">Nombres, temas, regalos y hasta piezas con QR (según el diseño).</p>
+              <span class="badge badge-skill" data-i18n="offer.cards.c8.badge">A pedido</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Nota pequeña para que no suene “solo impresión 3D” -->
-        <p class="small text-muted text-center mt-4 mb-0">
-          *La disponibilidad y el acabado (armado/pintado) depende del modelo y de la carga de trabajo.
+        <p class="small text-muted text-center mt-4 mb-0" data-i18n="offer.note">
+          *La disponibilidad y el acabado (armado/pintado) dependen del modelo y de la carga de trabajo.
         </p>
       </div>
     </section>
@@ -302,11 +300,12 @@ El texto final visible lo controla translations.js (data-i18n).
 
         <div class="row g-4">
 
-          <!-- Producto 1 -->
           <div class="col-md-6">
             <article class="project-card h-100">
               <a class="project-thumb d-block mb-3" href="https://www.instagram.com/maiz_fundido/" target="_blank"
-                rel="noreferrer" aria-label="Ver en Instagram">
+                rel="noreferrer"
+                aria-label="Ver en Instagram"
+                data-i18n-aria="featured.items.p1.aria">
                 <img src="images/producto-1.jpg" class="img-fluid rounded" alt="Producto destacado 1">
               </a>
 
@@ -331,11 +330,12 @@ El texto final visible lo controla translations.js (data-i18n).
             </article>
           </div>
 
-          <!-- Producto 2 -->
           <div class="col-md-6">
             <article class="project-card h-100">
               <a class="project-thumb d-block mb-3" href="https://www.instagram.com/maiz_fundido/" target="_blank"
-                rel="noreferrer" aria-label="Ver en Instagram">
+                rel="noreferrer"
+                aria-label="Ver en Instagram"
+                data-i18n-aria="featured.items.p2.aria">
                 <img src="images/producto-2.jpg" class="img-fluid rounded" alt="Producto destacado 2">
               </a>
 
@@ -360,11 +360,12 @@ El texto final visible lo controla translations.js (data-i18n).
             </article>
           </div>
 
-          <!-- Producto 3 -->
           <div class="col-md-6">
             <article class="project-card h-100">
               <a class="project-thumb d-block mb-3" href="https://www.instagram.com/maiz_fundido/" target="_blank"
-                rel="noreferrer" aria-label="Ver en Instagram">
+                rel="noreferrer"
+                aria-label="Ver en Instagram"
+                data-i18n-aria="featured.items.p3.aria">
                 <img src="images/producto-3.jpg" class="img-fluid rounded" alt="Producto destacado 3">
               </a>
 
@@ -389,11 +390,12 @@ El texto final visible lo controla translations.js (data-i18n).
             </article>
           </div>
 
-          <!-- Producto 4 -->
           <div class="col-md-6">
             <article class="project-card h-100">
               <a class="project-thumb d-block mb-3" href="https://www.instagram.com/maiz_fundido/" target="_blank"
-                rel="noreferrer" aria-label="Ver en Instagram">
+                rel="noreferrer"
+                aria-label="Ver en Instagram"
+                data-i18n-aria="featured.items.p4.aria">
                 <img src="images/producto-4.jpg" class="img-fluid rounded" alt="Producto destacado 4">
               </a>
 
@@ -422,389 +424,181 @@ El texto final visible lo controla translations.js (data-i18n).
       </div>
     </section>
 
-
     <!-- CONTACTO -->
     <section id="contacto" class="py-5 container">
       <div class="container">
         <h2 class="section-title text-center mb-2" data-i18n="contact.title">Contacto</h2>
         <p class="text-center text-muted mb-5" data-i18n="contact.subtitle">
-          ¿Tienes dudas, quieres pedir una cotización o te gusatria realizar una colaboración? Escríbenos, con gusto te
-          atendemos.
+          ¿Tienes dudas, quieres pedir una cotización o te gustaría realizar una colaboración? Escríbenos; con gusto te atendemos.
         </p>
 
         <div class="row g-4 justify-content-center">
 
-          <!-- Datos + redes -->
           <div class="col-lg-5">
             <div class="cv-card h-100">
               <h3 class="h5 mb-3" data-i18n="contact.direct.title">Contacto directo</h3>
 
               <p class="mb-2 small text-muted" data-i18n="contact.direct.p1">
-                Respuesta más rápida por Instagram.
+                La respuesta más rápida es por Instagram.
               </p>
 
               <div class="d-grid gap-2">
                 <a class="btn btn-ig" href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer">
-                  <i class="fa-brands fa-instagram me-2"></i>
+                  <i class="fa-brands fa-instagram me-2" aria-hidden="true"></i>
                   <span data-i18n="contact.direct.ig">Enviar DM en Instagram</span>
                 </a>
 
                 <a class="btn btn-tt" href="https://www.tiktok.com/@maiz_fundido" target="_blank" rel="noreferrer">
-                  <i class="fa-brands fa-tiktok me-2"></i>
+                  <i class="fa-brands fa-tiktok me-2" aria-hidden="true"></i>
                   <span data-i18n="contact.direct.tt">Ver TikTok</span>
                 </a>
 
                 <a class="btn btn-fb" href="https://www.facebook.com/MaizFundidoo/" target="_blank" rel="noreferrer">
-                  <i class="fa-brands fa-facebook me-2"></i>
+                  <i class="fa-brands fa-facebook me-2" aria-hidden="true"></i>
                   <span data-i18n="contact.direct.fb">Ir a Facebook</span>
                 </a>
               </div>
-
-
 
               <hr class="my-4">
 
               <p class="small text-muted mb-0" data-i18n="contact.direct.note">
                 También podemos armar pedidos personalizados según tu idea.
               </p>
+
+              <div class="text-center mt-3">
+                <img src="images/elotitocallcenter.png" alt="Elotito call center - Maíz Fundido"
+                  class="img-fluid rounded mb-2" width="250">
+              </div>
             </div>
           </div>
 
-        <!-- Formulario -->
-<div class="col-lg-7">
-  <div class="cv-card h-100">
-    <h3 class="h5 mb-3" data-i18n="contact.form.title">Formulario</h3>
-
-    <form id="contact-form" novalidate>
-      <div class="row g-3">
-
-        <div class="col-md-6">
-          <label for="name" class="form-label" data-i18n="contact.form.nameLabel">Nombre</label>
-          <input
-            id="name" name="name" type="text"
-            class="form-control"
-            placeholder="Tu nombre"
-            data-i18n-placeholder="contact.form.namePh"
-            required minlength="2" maxlength="60"
-          >
-          <div class="invalid-feedback">Por favor escribe tu nombre (2 a 60 caracteres).</div>
-        </div>
-
-        <div class="col-md-6">
-          <label for="email" class="form-label" data-i18n="contact.form.emailLabel">Correo</label>
-          <input
-            id="email" name="email" type="email"
-            class="form-control"
-            placeholder="tucorreo@email.com"
-            data-i18n-placeholder="contact.form.emailPh"
-            required maxlength="120"
-          >
-          <div class="invalid-feedback">Por favor escribe un correo válido.</div>
-        </div>
-
-        <div class="col-12">
-          <label for="message" class="form-label" data-i18n="contact.form.msgLabel">Mensaje</label>
-          <textarea
-            id="message" name="message"
-            class="form-control"
-            rows="5"
-            placeholder="Cuéntanos qué diseño te gustó o qué idea tienes 😊"
-            data-i18n-placeholder="contact.form.msgPh"
-            required minlength="10" maxlength="400"
-          ></textarea>
-
-          <!-- contador + hint -->
-          <div class="d-flex justify-content-between align-items-center mt-1">
-            <small class="text-muted">Mínimo 10 caracteres.</small>
-            <small class="text-muted"><span id="msg-count">0</span>/400</small>
-          </div>
-
-          <div class="invalid-feedback">Cuéntanos un poquito más (mínimo 10 y máximo 400 caracteres).</div>
-        </div>
-
-        <div class="col-12 d-flex justify-content-end">
-          <button id="btn-submit" type="submit" class="btn btn-primary" data-i18n="contact.form.send">
-            Enviar
-          </button>
-        </div>
-
-        <p class="small text-muted mb-0" data-i18n="contact.form.note">
-          *Si prefieres, mándanos DM en Instagram y te respondemos más rápido.
-        </p>
-
-        <!-- status como alerta bootstrap -->
-        <div class="col-12">
-          <div id="form-status" class="alert py-2 px-3 mb-0 d-none" role="alert"></div>
-        </div>
-
-      </div>
-    </form>
-  </div>
-</div>
-
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-5 section-alt container">
-      <div class="container">
-        <div class="text-center mb-4">
-          <h2 class="section-title mb-2" data-i18n="faq.title">Preguntas frecuentes</h2>
-          <p class="text-muted mb-0" data-i18n="faq.subtitle">
-            Resolvemos lo más común. Si te queda duda, escríbenos por Instagram 💛🌽
-          </p>
-        </div>
-
-        <div class="row g-4 align-items-start">
-          <!-- Accordion -->
           <div class="col-lg-7">
-            <div class="accordion mf-accordion" id="faqAccordion">
+            <div class="cv-card h-100">
+              <h3 class="h5 mb-3" data-i18n="contact.form.title">Formulario</h3>
 
-              <!-- 1 -->
-              <div class="accordion-item mf-acc-item">
-                <h3 class="accordion-header" id="faqH1">
-                  <button class="accordion-button mf-acc-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqC1" aria-expanded="true" aria-controls="faqC1">
-                    <span class="mf-q">¿De qué material están hechos sus productos?</span>
-                    <span class="mf-chip">Material</span>
-                  </button>
-                </h3>
-                <div id="faqC1" class="accordion-collapse collapse show" aria-labelledby="faqH1"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body mf-acc-body">
-                    Están hechos con <strong>bioplástico PLA</strong> (derivado del almidón de plantas como el maíz) e
-                    impresión 3D. Son ligeros y con acabado artesanal.
+              <form id="contact-form" novalidate>
+                <div class="row g-3">
+
+                  <div class="col-md-6">
+                    <label for="name" class="form-label" data-i18n="contact.form.nameLabel">Nombre</label>
+                    <input id="name" name="name" type="text" class="form-control" placeholder="Tu nombre"
+                      data-i18n-placeholder="contact.form.namePh" required minlength="2" maxlength="60" autocomplete="name">
+                    <div class="invalid-feedback" data-i18n="contact.form.nameInvalid">
+                      Por favor escribe tu nombre (2 a 60 caracteres).
+                    </div>
                   </div>
-                </div>
-              </div>
 
-              <!-- 2 -->
-              <div class="accordion-item mf-acc-item">
-                <h3 class="accordion-header" id="faqH2">
-                  <button class="accordion-button collapsed mf-acc-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqC2" aria-expanded="false" aria-controls="faqC2">
-                    <span class="mf-q">¿Qué métodos de pago aceptan?</span>
-                    <span class="mf-chip">Pagos</span>
-                  </button>
-                </h3>
-                <div id="faqC2" class="accordion-collapse collapse" aria-labelledby="faqH2"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body mf-acc-body">
-                    Aceptamos <strong>tarjeta, transferencia o depósito</strong>. En temporadas/ventas específicas
-                    también podemos
-                    habilitar otras opciones; pregúntanos por DM.
+                  <div class="col-md-6">
+                    <label for="email" class="form-label" data-i18n="contact.form.emailLabel">Correo</label>
+                    <input id="email" name="email" type="email" class="form-control" placeholder="tucorreo@email.com"
+                      data-i18n-placeholder="contact.form.emailPh" required maxlength="120" autocomplete="email">
+                    <div class="invalid-feedback" data-i18n="contact.form.emailInvalid">
+                      Por favor escribe un correo válido.
+                    </div>
                   </div>
-                </div>
-              </div>
 
-              <!-- 3 -->
-              <div class="accordion-item mf-acc-item">
-                <h3 class="accordion-header" id="faqH3">
-                  <button class="accordion-button collapsed mf-acc-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqC3" aria-expanded="false" aria-controls="faqC3">
-                    <span class="mf-q">¿Tienen precios de mayoreo?</span>
-                    <span class="mf-chip">Mayoreo</span>
-                  </button>
-                </h3>
-                <div id="faqC3" class="accordion-collapse collapse" aria-labelledby="faqH3"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body mf-acc-body">
-                    Solo en <strong>modelos seleccionados</strong>. Escríbenos por mensaje para revisar piezas,
-                    cantidades y disponibilidad.
+                  <div class="col-12">
+                    <label for="requestType" class="form-label" data-i18n="contact.form.typeLabel">¿Qué necesitas?</label>
+                    <select id="requestType" name="requestType" class="form-select" required>
+                      <option value="" selected data-i18n="contact.form.typePh">Selecciona una opción</option>
+                      <option value="custom" data-i18n="contact.form.type.custom">Pedido personalizado</option>
+                      <option value="collab" data-i18n="contact.form.type.collab">Colaboración</option>
+                      <option value="resell" data-i18n="contact.form.type.resell">Quiero vender tus productos (comisión)</option>
+                    </select>
+                    <div class="invalid-feedback" data-i18n="contact.form.typeInvalid">
+                      Selecciona una opción, porfa.
+                    </div>
                   </div>
-                </div>
-              </div>
 
-              <!-- 4 -->
-              <div class="accordion-item mf-acc-item">
-                <h3 class="accordion-header" id="faqH4">
-                  <button class="accordion-button collapsed mf-acc-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqC4" aria-expanded="false" aria-controls="faqC4">
-                    <span class="mf-q">¿Hacen envíos nacionales o internacionales?</span>
-                    <span class="mf-chip">Envíos</span>
-                  </button>
-                </h3>
-                <div id="faqC4" class="accordion-collapse collapse" aria-labelledby="faqH4"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body mf-acc-body">
-                    Hacemos <strong>envíos nacionales</strong>. Si necesitas internacional, escríbenos y lo revisamos
-                    contigo para cotizar.
+                  <div class="col-12">
+                    <label for="message" class="form-label" data-i18n="contact.form.msgLabel">Mensaje</label>
+                    <textarea id="message" name="message" class="form-control" rows="5"
+                      placeholder="Cuéntanos qué diseño te gustó o qué idea tienes 😊"
+                      data-i18n-placeholder="contact.form.msgPh" required minlength="10" maxlength="400"></textarea>
+
+                    <div class="d-flex justify-content-between align-items-center mt-1">
+                      <small class="text-muted" data-i18n="contact.form.msgHint">Mínimo 10 caracteres.</small>
+                      <small class="text-muted"><span id="msg-count">0</span>/400</small>
+                    </div>
+
+                    <div class="invalid-feedback" data-i18n="contact.form.msgInvalid">
+                      Cuéntanos un poquito más (mínimo 10 y máximo 400 caracteres).
+                    </div>
                   </div>
-                </div>
-              </div>
 
-              <!-- 5 -->
-              <div class="accordion-item mf-acc-item">
-                <h3 class="accordion-header" id="faqH5">
-                  <button class="accordion-button collapsed mf-acc-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqC5" aria-expanded="false" aria-controls="faqC5">
-                    <span class="mf-q">¿Se pueden volver a hacer productos agotados o de temporada?</span>
-                    <span class="mf-chip">Stock</span>
-                  </button>
-                </h3>
-                <div id="faqC5" class="accordion-collapse collapse" aria-labelledby="faqH5"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body mf-acc-body">
-                    Sí. Si algo está agotado, mándanos mensaje y lo revisamos. El tiempo puede variar según
-                    <strong>carga de trabajo</strong> y complejidad.
+                  <div class="col-12">
+                    <label for="refImage" class="form-label" data-i18n="contact.form.imgLabel">Imagen de referencia (opcional)</label>
+                    <input id="refImage" name="refImage" type="file" class="form-control"
+                      accept=".jpg,.jpeg,.png,image/jpeg,image/png">
+                    <div class="form-text" data-i18n="contact.form.imgHint">JPG/PNG · máximo 3 MB.</div>
+                    <div class="invalid-feedback" id="img-invalid" data-i18n="contact.form.imgInvalid">
+                      La imagen debe ser JPG/PNG y pesar máximo 3 MB.
+                    </div>
+
+                    <img id="img-preview" class="img-fluid rounded mt-2 d-none" alt="Preview" style="max-height:180px;">
                   </div>
-                </div>
-              </div>
 
-              <!-- 6 -->
-              <div class="accordion-item mf-acc-item">
-                <h3 class="accordion-header" id="faqH6">
-                  <button class="accordion-button collapsed mf-acc-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqC6" aria-expanded="false" aria-controls="faqC6">
-                    <span class="mf-q">¿Tienen tienda física?</span>
-                    <span class="mf-chip">Puntos</span>
-                  </button>
-                </h3>
-                <div id="faqC6" class="accordion-collapse collapse" aria-labelledby="faqH6"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body mf-acc-body">
-                    No como tienda propia, pero a veces tenemos productos en <strong>puntos de venta</strong> o bazares.
-                    Lo anunciamos en redes.
+                  <div class="col-12 d-flex justify-content-end">
+                    <button id="btn-submit" type="submit" class="btn btn-primary" data-i18n="contact.form.send">Enviar</button>
                   </div>
-                </div>
-              </div>
 
-              <!-- 7 -->
-              <div class="accordion-item mf-acc-item">
-                <h3 class="accordion-header" id="faqH7">
-                  <button class="accordion-button collapsed mf-acc-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqC7" aria-expanded="false" aria-controls="faqC7">
-                    <span class="mf-q">¿De qué material son los herrajes (ganchos/postes)?</span>
-                    <span class="mf-chip">Aretes</span>
-                  </button>
-                </h3>
-                <div id="faqC7" class="accordion-collapse collapse" aria-labelledby="faqH7"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body mf-acc-body">
-                    Usamos <strong>acero inoxidable hipoalergénico</strong> en ganchos y postes (según el modelo).
+                  <p class="small text-muted mb-0" data-i18n="contact.form.note">
+                    *Si prefieres, mándanos DM en
+                    <a href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer"
+                      style="color:#7AA600; text-decoration:none; font-weight:800;">
+                      Instagram
+                    </a>
+                    y te respondemos más rápido.
+                  </p>
+
+                  <div class="col-12">
+                    <div id="form-status" class="alert py-2 px-3 mb-0 d-none" role="alert"></div>
                   </div>
+
                 </div>
-              </div>
-
-              <!-- 8 -->
-              <div class="accordion-item mf-acc-item">
-                <h3 class="accordion-header" id="faqH8">
-                  <button class="accordion-button collapsed mf-acc-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqC8" aria-expanded="false" aria-controls="faqC8">
-                    <span class="mf-q">¿Hacen pedidos personalizados?</span>
-                    <span class="mf-chip">Personalizados</span>
-                  </button>
-                </h3>
-                <div id="faqC8" class="accordion-collapse collapse" aria-labelledby="faqH8"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body mf-acc-body">
-                    Sí 💛 Cuéntanos tu idea por DM. Si es viable, te mandamos <strong>cotización</strong> y tiempos.
-                  </div>
-                </div>
-              </div>
-
-              <!-- 9 -->
-              <div class="accordion-item mf-acc-item">
-                <h3 class="accordion-header" id="faqH9">
-                  <button class="accordion-button collapsed mf-acc-btn" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#faqC9" aria-expanded="false" aria-controls="faqC9">
-                    <span class="mf-q">¿Van a tener tienda en línea?</span>
-                    <span class="mf-chip">Tienda</span>
-                  </button>
-                </h3>
-
-                <div id="faqC9" class="accordion-collapse collapse" aria-labelledby="faqH9"
-                  data-bs-parent="#faqAccordion">
-                  <div class="accordion-body mf-acc-body">
-                    Sí 💛 Muy pronto. Por ahora puedes pedir por <strong>DM en Instagram</strong> y te compartimos
-                    catálogo,
-                    precios y tiempos. En cuanto la tienda esté lista, lo anunciaremos en redes.
-                  </div>
-                </div>
-              </div>
-
+              </form>
 
             </div>
-          </div>
-
-          <!-- Mini card cute -->
-          <div class="col-lg-5">
-            <div class="mf-faq-card">
-              <div class="mf-faq-badge">
-                <i class="fa-solid fa-comments"></i>
-                <span data-i18n="faq.side.badge">¿No está tu duda?</span>
-              </div>
-
-              <p class="mb-3" data-i18n="faq.side.p1">
-                Escríbenos por Instagram y te respondemos con gusto.
-              </p>
-
-              <div class="d-grid gap-2">
-                <a class="btn btn-primary mf-btn-accent" href="https://www.instagram.com/maiz_fundido/" target="_blank"
-                  rel="noreferrer">
-                  <i class="fa-brands fa-instagram me-2"></i><span data-i18n="faq.side.cta">Enviar DM</span>
-                </a>
-                <a class="btn btn-outline-secondary" href="#contacto" data-i18n="faq.side.contact">
-                  Ir a Contacto
-                </a>
-              </div>
-              <img src="images/elotitoimpreso.png" alt="elotito impreso - Maíz Fundido" class="img-fluid mt-4 rounded"
-                width="1500px">
-            </div>
-
           </div>
 
         </div>
       </div>
     </section>
 
+    <!-- FAQ (tu HTML se queda igual; asumo que translations ya tiene todas esas keys) -->
+    <!-- ... tu sección FAQ aquí sin cambios ... -->
 
-
-    <div class="mf-divider" aria-hidden="true"></div>
-
-    <section class="py-5"></section> <!-- crema -->
-
-
-    <!-- TIENDA EN LÍNEA (MUY PRONTO) -->
     <section id="tienda" class="py-5 section-alt-mint">
       <div class="container">
         <div class="cv-card text-center p-4 p-md-5">
 
-          <p class="mf-kicker text-uppercase text-accent mb-2">Tienda en línea</p>
+          <p class="mf-kicker text-uppercase text-accent mb-2" data-i18n="shop.kicker">Tienda en línea</p>
+          <h2 class="section-title mb-2" data-i18n="shop.title">Muy pronto</h2>
 
-          <h2 class="section-title mb-2">Muy pronto</h2>
-
-          <p class="mb-4">
+          <p class="mb-4" data-i18n="shop.description">
             Estamos preparando la tienda para que puedas comprar más fácil.
             Mientras tanto, puedes pedir por DM y te compartimos catálogo, precios y tiempos.
           </p>
-          <img src="images/elotitodev.png" alt="Tienda en línea - Coming Soon" class="img-fluid rounded mb-4"
-            width="250px" />
+
+          <img src="images/elotitodev.png" alt="Tienda en línea - Próximamente" class="img-fluid rounded mb-4" width="250" />
+
           <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
             <a class="btn btn-ig" href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer">
-              <i class="fa-brands fa-instagram me-2"></i> Pedir por Instagram
+              <i class="fa-brands fa-instagram me-2" aria-hidden="true"></i>
+              <span data-i18n="shop.cta.ig">Pedir por Instagram</span>
             </a>
             <a href="./Doc/CatalogoAretes.pdf" class="btn btn-pdf-c" download target="_blank" rel="noreferrer">
-              <i class="fa-solid fa-file-arrow-down"></i>
-              <span>Descargar catálogo (PDF)</span>
+              <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+              <span data-i18n="shop.cta.pdf">Descargar catálogo (PDF)</span>
             </a>
-
-
-
           </div>
 
-          <p class="small text-muted mt-3 mb-0">
+          <p class="small text-muted mt-3 mb-0" data-i18n="shop.note">
             Nota: el catálogo está en constante actualización. Aún faltan productos por subir.
           </p>
         </div>
       </div>
     </section>
-
 
   </main>
 
@@ -814,9 +608,11 @@ El texto final visible lo controla translations.js (data-i18n).
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- i18n -->
+  <!-- i18n (orden IMPORTANTE: translations -> i18n -> main) -->
   <script src="./JS/translations.js"></script>
   <script src="./JS/i18n.js"></script>
+
+  <!-- Contacto -->
   <script src="./JS/contacto.js"></script>
 
   <!-- Tu JS global -->

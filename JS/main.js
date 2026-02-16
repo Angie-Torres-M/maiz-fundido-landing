@@ -157,30 +157,34 @@ function initVerMasButtons() {
 // ==============================
 // i18n refresh after injecting header/footer
 // ==============================
+
 function refreshI18n() {
   const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
 
-  if (typeof window.applyLanguage === "function") {
-    window.applyLanguage(lang);
-  }
-
-  if (typeof window.bindLangToggle === "function") {
-    window.bindLangToggle();
-  }
+  if (typeof window.applyLanguage === "function") window.applyLanguage(lang);
+  if (typeof window.bindLangToggles === "function") window.bindLangToggles();
 
   document.dispatchEvent(new CustomEvent("i18n:refresh", { detail: { lang } }));
 }
+
 
 // ==============================
 // helper: get translation by path
 // ==============================
 function getT(lang, path) {
   try {
-    return path.split(".").reduce((acc, k) => acc?.[k], translations?.[lang]);
+    return path.split(".").reduce((acc, k) => acc?.[k], window.translations?.[lang]);
   } catch {
     return undefined;
   }
 }
+
+// alt
+document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+  const key = el.dataset.i18nAlt;
+  const t = getNestedTranslation(window.translations[lang], key);
+  if (t !== undefined && t !== null) el.setAttribute("alt", t);
+});
 
 // ==============================
 // Ocultar header en móvil al hacer scroll hacia abajo

@@ -5,34 +5,68 @@
       <div class="nav-container">
 
         <!-- Logo -->
- <a href="./index.html#hero" class="logo-link" aria-label="Ir a inicio">
-  <img src="./images/logomaizfundido2en1.png" class="logo logo-light" alt="Logo maizfundido modo claro" style="width: 150px;">
-  <img src="./images/logomaizfundido2en1MO.png" class="logo logo-dark" alt="Logo maizfundido modo oscuro" style="width: 150px;">
-</a>
-
+        <a href="./index.html#inicio" class="logo-link"
+          aria-label="Ir a inicio"
+          data-i18n-aria="nav.homeAria">
+          <img
+            src="./images/logomaizfundido2en1.png"
+            class="logo logo-light"
+            alt="Maíz Fundido logo"
+            style="width: 150px;"
+          >
+          <img
+            src="./images/logomaizfundido2en1MO.png"
+            class="logo logo-dark"
+            alt="Maíz Fundido logo"
+            style="width: 150px;"
+          >
+        </a>
 
         <!-- Botón modo oscuro/claro (solo móvil) -->
-        <button id="theme-toggle-mobile" class="btn btn-outline-secondary btn-sm d-md-none" aria-label="Cambiar tema">
-          <i class="fa-solid fa-moon"></i>
+        <button
+          id="theme-toggle-mobile"
+          class="btn btn-outline-secondary btn-sm d-md-none"
+          type="button"
+          aria-label="Cambiar tema"
+          data-i18n-aria="theme.toggleAria"
+        >
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+          <span class="visually-hidden" data-i18n="theme.toggle">Cambiar tema</span>
         </button>
 
         <!-- SWITCH IDIOMA (solo móvil) -->
-        <button id="lang-toggle-mobile" class="lang-switch btn-sm d-md-none" type="button" aria-label="Cambiar idioma">
+        <button
+          id="lang-toggle-mobile"
+          class="lang-switch btn-sm d-md-none"
+          type="button"
+          aria-label="Cambiar idioma"
+          data-i18n-aria="lang.toggleAria"
+        >
           <span class="lang-pill" aria-hidden="true"></span>
-          <span class="lang-text lang-left">ES</span>
-          <span class="lang-text lang-right">EN</span>
+          <span class="lang-text lang-left" aria-hidden="true">ES</span>
+          <span class="lang-text lang-right" aria-hidden="true">EN</span>
+          <span class="visually-hidden" data-i18n="lang.toggle">Cambiar idioma</span>
         </button>
 
         <!-- Botón hamburguesa -->
-        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Abrir menú"
+          data-i18n-aria="nav.openMenuAria"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
 
         <!-- Menú -->
         <div class="nav-menu" id="navMenu">
           <ul class="nav-links">
             <li><a href="#historia" data-i18n="nav.about">Nuestra historia</a></li>
-            <li><a href="#ofrecemos" data-i18n="nav.skills">¿Qué ofrecemos?</a></li>
-            <li><a href="#destacados" data-i18n="nav.projects">Destacados</a></li>
-            <li><a href="#contacto" data-i18n="nav.cv">Contacto</a></li>
+            <li><a href="#ofrecemos" data-i18n="nav.offer">¿Qué ofrecemos?</a></li>
+            <li><a href="#destacados" data-i18n="nav.featured">Destacados</a></li>
+            <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
             <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
           </ul>
         </div>
@@ -41,15 +75,28 @@
         <div class="d-flex align-items-center gap-2">
 
           <!-- SWITCH IDIOMA (desktop) -->
-          <button id="lang-toggle" class="lang-switch btn-sm d-none d-md-inline-flex" type="button" aria-label="Cambiar idioma">
+          <button
+            id="lang-toggle"
+            class="lang-switch btn-sm d-none d-md-inline-flex"
+            type="button"
+            aria-label="Cambiar idioma"
+            data-i18n-aria="lang.toggleAria"
+          >
             <span class="lang-pill" aria-hidden="true"></span>
-            <span class="lang-text lang-left">ES</span>
-            <span class="lang-text lang-right">EN</span>
+            <span class="lang-text lang-left" aria-hidden="true">ES</span>
+            <span class="lang-text lang-right" aria-hidden="true">EN</span>
+            <span class="visually-hidden" data-i18n="lang.toggle">Cambiar idioma</span>
           </button>
 
           <!-- TEMA (desktop) -->
-          <button id="theme-toggle" class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex">
-            <i class="fa-solid fa-moon me-1"></i>
+          <button
+            id="theme-toggle"
+            class="btn btn-outline-secondary btn-sm d-none d-md-inline-flex"
+            type="button"
+            aria-label="Cambiar tema"
+            data-i18n-aria="theme.toggleAria"
+          >
+            <i class="fa-solid fa-moon me-1" aria-hidden="true"></i>
             <span data-i18n="theme.dark">Modo oscuro</span>
           </button>
 
