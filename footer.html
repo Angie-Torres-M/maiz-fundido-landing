@@ -1,82 +1,168 @@
 <!-- FOOTER -->
 <section class="footer">
-  <footer class="footer py-4">
-    <div class="container">
-      <div class="row align-items-center text-center g-3 footer-grid">
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row g-4 align-items-start footer-grid">
 
-        <!-- Col 1: Logo -->
-        <div class="col-12 col-md-3 footer-col footer-col-left">
-          <a href="./index.html" class="logo-link d-inline-block" aria-label="Ir a inicio">
-            <img src="./images/logomaizfundido2en1largo.png"
-                 class="logo logo-light footer-logo"
-                 alt="Logo maizfundido modo claro"
-                 style="width: 250px;">
-            <img src="./images/logomaizfundido2en1largoMO.png"
-                 class="logo logo-dark footer-logo"
-                 alt="Logo maizfundido modo oscuro"
-                 style="width: 250px;"> 
-                 
-          </a>
-        </div>
+                <!-- Col 1: Logo + redes -->
+                <div class="col-12 col-md-3 footer-col footer-col-left text-center text-md-start">
+                    <a href="#inicio" class="logo-link d-inline-block" aria-label="Ir a inicio"
+                        data-i18n-aria="footer.homeAria">
+                        <img src="./images/logomaizfundido2en1largo.png" class="logo logo-light footer-logo"
+                            alt="Maíz Fundido logo" style="width: 240px;">
+                        <img src="./images/logomaizfundido2en1largoMO.png" class="logo logo-dark footer-logo"
+                            alt="Maíz Fundido logo" style="width: 240px;">
+                    </a>
 
-        <!-- Col 2: Contacto centrado -->
-        <div class="col-12 col-md-6 footer-col footer-col-center">
-          <section id="contact" class="footer-contact">
-            <h2 class="h5 mb-2" data-i18n="footer.title">Contacto</h2>
+                    <!-- Instagram -->
+                    <p class="small text-muted mt-3 mb-2">
+                        <span data-i18n="footer.fastReplyPrefix">Respuesta más rápida por Instagram:</span>
+                        <a class="footer-accent-link" href="https://www.instagram.com/maiz_fundido/" target="_blank"
+                            rel="noreferrer" aria-label="Instagram @maiz_fundido" data-i18n-aria="footer.igHandleAria">
+                            @maiz_fundido
+                        </a>
+                    </p>
 
-            <p class="mb-2" data-i18n="footer.p1">
-              ¿Quieres una cotización o un pedido personalizado?
-            </p>
 
-            <p class="mb-2">
-              <span data-i18n="footer.emailLabel">Contáctanos aquí.</span>
-              <a href="mailto:maizfundido@gmail.com">maizfundido@gmail.com</a>
-            </p>
 
-            <div class="nav-social d-flex gap-2 align-items-center justify-content-center mt-2">
-              <a href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer"
-                 class="social-link" aria-label="Instagram Maíz Fundido">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
+                    <!-- Redes -->
+                    <div
+                        class="nav-social d-flex gap-2 align-items-center justify-content-center justify-content-md-start mt-2">
+                        <a href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer"
+                            class="social-link" aria-label="Instagram Maíz Fundido" data-i18n-aria="footer.social.ig">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
 
-              <a href="https://www.facebook.com/MaizFundidoo/" target="_blank" rel="noreferrer"
-                 class="social-link" aria-label="Facebook Maíz Fundido">
-                <i class="fa-brands fa-facebook"></i>
-              </a>
+                        <a href="https://www.facebook.com/MaizFundidoo/" target="_blank" rel="noreferrer"
+                            class="social-link" aria-label="Facebook Maíz Fundido" data-i18n-aria="footer.social.fb">
+                            <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+                        </a>
 
-              <a href="https://www.tiktok.com/@maiz_fundido" target="_blank" rel="noreferrer"
-                 class="social-link" aria-label="TikTok Maíz Fundido">
-                <i class="fa-brands fa-tiktok"></i>
-              </a>
+                        <a href="https://www.tiktok.com/@maiz_fundido" target="_blank" rel="noreferrer"
+                            class="social-link" aria-label="TikTok Maíz Fundido" data-i18n-aria="footer.social.tt">
+                            <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <br>
+
+                    <!-- Email (mailto) -->
+                     <p class="small text-muted mb-2"> <span data-i18n="footer.emailLabel">Correo:</span>
+                    <a class="footer-accent-link"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=maizfundido@gmail.com&su=Hola%20Ma%C3%ADz%20Fundido&body=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cotizaci%C3%B3n.%20%F0%9F%8C%BD%0A%0A-%20Nombre%3A%0A-%20Producto%2Fidea%3A%0A-%20Cantidad%3A%0A-%20Ciudad%2FCP%3A%0A%0AGracias%21"
+                        target="_blank" rel="noreferrer" aria-label="Enviar correo a maizfundido@gmail.com"
+                        data-i18n-aria="footer.emailAria">
+                        maizfundido@gmail.com
+                    </a>
+                    </p>
+
+                </div>
+
+
+                <!-- Col 2 -->
+                <div class="col-12 col-md-4 footer-col footer-col-center text-center text-md-start">
+                    <h2 class="h6 fw-bold mb-3" data-i18n="footer.pointsTitle">Puntos de venta</h2>
+
+                    <p class="mb-2 footer-mini" data-i18n="footer.pointsSubtitle">
+                        Productos seleccionados en <strong>Libre Liebre mini</strong> (Centro CDMX):
+                    </p>
+
+                    <ul class="footer-list mb-3">
+                        <li>
+                            <i class="fa-solid fa-location-dot me-2 footer-icon" aria-hidden="true"></i>
+                            <span data-i18n="footer.points.addr1"><strong>Dr. Mora #9, Local 4</strong> — Centro
+                                CDMX</span>
+                            <div class="small">
+                                <a class="footer-link" target="_blank" rel="noreferrer"
+                                    href="https://www.google.com/maps/search/?api=1&query=Dr.+Mora+9+Local+4+Centro+CDMX"
+                                    data-i18n="footer.points.map">
+                                    Ver mapa
+                                </a>
+                            </div>
+                        </li>
+
+                        <li class="mt-2">
+                            <i class="fa-solid fa-location-dot me-2 footer-icon" aria-hidden="true"></i>
+                            <span data-i18n="footer.points.addr2"><strong>Bolívar #8</strong> — Centro CDMX</span>
+                            <div class="small">
+                                <a class="footer-link" target="_blank" rel="noreferrer"
+                                    href="https://www.google.com/maps/search/?api=1&query=Bol%C3%ADvar+8+Centro+CDMX"
+                                    data-i18n="footer.points.map">
+                                    Ver mapa
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <p class="footer-mini mb-0">
+                        <i class="fa-regular fa-clock me-2 footer-icon" aria-hidden="true"></i>
+                        <span data-i18n="footer.storeHours">
+                            <strong>Horario de tienda:</strong> Todos los días 11:00 am – 8:00 pm
+                        </span>
+                    </p>
+                </div>
+                <div class="col-12 col-md-1 footer-col footer-col-right text-center text-md-start">
+
+                </div>
+                <!-- Col 3 -->
+                <div class="col-12 col-md-4 footer-col footer-col-right text-center text-md-start">
+                    <h2 class="h6 fw-bold mb-3" data-i18n="footer.shippingTitle">Entregas y envíos</h2>
+
+                    <ul class="footer-list mb-3">
+                        <li>
+                            <i class="fa-solid fa-train-subway me-2 footer-icon" aria-hidden="true"></i>
+                            <span data-i18n="footer.delivery1">
+                                <strong>Entregas gratis</strong> en metro CDMX (según condiciones)
+                            </span>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-truck me-2 footer-icon" aria-hidden="true"></i>
+                            <span data-i18n="footer.delivery2">
+                                <strong>Envíos nacionales:</strong> CDMX desde $80 / resto desde $180
+                            </span>
+                        </li>
+                        <li class="mt-2">
+                            <i class="fa-solid fa-plane me-2 footer-icon" aria-hidden="true"></i>
+                            <span data-i18n="footer.delivery3">
+                                <strong>Internacionales:</strong> desde $380 (cotiza con tu CP)
+                            </span>
+                        </li>
+                    </ul>
+
+                    <div class="footer-cta">
+                        <p class="mb-2 fw-semibold" data-i18n="footer.collabTitle">¿Quieres colaborar o vender en tu
+                            tienda?</p>
+                        <a href="#contacto" class="btn btn-sm btn-outline-success btn-collab"
+                            data-i18n="footer.collabBtn">
+                            Proponer colaboración
+                        </a>
+                        <p class="small text-muted mt-2 mb-0" data-i18n="footer.collabNote">
+                            Cuéntanos tu idea y te respondemos.
+                        </p>
+                    </div>
+                </div>
+
             </div>
-          </section>
+
+            <div class="footer-bottom mt-4 pt-3">
+                <div class="row g-2 align-items-center">
+                    <div class="col-12 col-md-8 text-center text-md-start">
+                        <span class="footer-copy" data-i18n="footer.copyright">
+                            © 2026 Maíz Fundido. Todos los derechos reservados. Ciudad de México.
+                        </span>
+                    </div>
+
+                    <div class="col-12 col-md-4 text-center text-md-end">
+                        <div class="footer-hours">
+                            <div class="fw-bold" data-i18n="footer.supportHoursTitle">Horario de atención al cliente
+                            </div>
+                            <div class="small" data-i18n="footer.supportHours">
+                                Lunes a viernes: 10:00 am – 5:00 pm · Sábado: 10:00 am – 12:00 pm
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Col 3: PDF + nota (derecha) -->
-        <div class="col-12 col-md-3 footer-col footer-col-right">
-          <div class="footer-pdf">
-            <a href="./Doc/CatalogoAretes.pdf"
-               class="btn btn-outline-primary footer-pdf-btn"
-               download
-               target="_blank"
-               rel="noreferrer"
-               data-i18n="footer.catalogPdf">
-              Descargar catálogo de aretes (PDF)
-            </a>
-
-            <p class="small text-muted mb-0 mt-2" data-i18n="footer.catalogNote">
-              Nota: el catálogo está en constante actualización. Aún faltan productos por subir.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom text-center mt-3">
-        <span style="color:#BAD200;" data-i18n="footer.copyright">
-          © 2026 Maíz Fundido. Todos los derechos reservados. Ciudad de México
-        </span>
-      </div>
-    </div>
-  </footer>
+    </footer>
 </section>

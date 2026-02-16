@@ -403,10 +403,16 @@ a.btn.btn-pdf-c span{
 /* ---------------------------
    PDF Catálogo (Maíz #bad200)
 --------------------------- */
+/* PDF botón: texto verde (light + dark) */
 a.btn.btn-pdf-c{
   border-color: rgba(186, 210, 0, .95) !important;
-  color: #d23100 !important;
+  color: #2E7D32 !important;                 /* ✅ verde */
   background: rgba(186, 210, 0, .12) !important;
+}
+
+/* por si trae <i> o <span> dentro */
+a.btn.btn-pdf-c *{
+  color: inherit !important;                 /* ✅ hereda verde */
 }
 
 a.btn.btn-pdf-c:hover{
@@ -415,15 +421,20 @@ a.btn.btn-pdf-c:hover{
   filter: brightness(0.99);
 }
 
-/* Dark mode: MISMO color y look */
+/* Dark mode: MISMO look, verde visible */
 html[data-bs-theme="dark"] a.btn.btn-pdf-c{
   border-color: rgba(186, 210, 0, 1) !important;
-  color: #d23100 !important;
+  color: #7ED957 !important;                 /* ✅ verde más brillante para dark */
   background: rgba(186, 210, 0, .10) !important;
 }
 
 html[data-bs-theme="dark"] a.btn.btn-pdf-c:hover{
   background: rgba(186, 210, 0, .16) !important;
+}
+
+/* asegura iconos en dark también */
+html[data-bs-theme="dark"] a.btn.btn-pdf-c *{
+  color: inherit !important;
 }
 
 /* ======================================
