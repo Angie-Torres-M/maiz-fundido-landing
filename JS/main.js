@@ -7,6 +7,7 @@
 // - Re-aplica i18n después de inyectar header/footer
 // ======================================================
 
+
 document.addEventListener("DOMContentLoaded", async () => {
   // 1) Inyectar header y footer
   await includeHTML("#site-header", "./header.html");
