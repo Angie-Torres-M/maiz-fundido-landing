@@ -91,9 +91,16 @@ footer.footer a:hover{
 /* Logo hover */
 .footer .footer-logo,
 footer.footer .logo{
-  transition: transform .15s ease;
+  transition: transform .15s ease; 
 }
 footer.footer .logo:hover{ transform: scale(1.06); }
+
+
+/* FIX definitivo: nunca mostrar ambos */
+footer.footer img.logo-dark{ display: none !important; }
+html[data-bs-theme="dark"] footer.footer img.logo-light{ display: none !important; }
+html[data-bs-theme="dark"] footer.footer img.logo-dark{ display: block !important; }
+
 
 /* =============================
    Redes sociales (botones redondos)
@@ -224,4 +231,133 @@ html[data-bs-theme="dark"] .footer-cta{
 
 html[data-bs-theme="dark"] .footer-bottom{
   border-top-color: rgba(231,233,238,.12);
+}
+
+/* =============================
+   FOOTER Responsive PRO (<=900px)
+   - convierte columnas en "cards"
+   - mejora tipografía, espaciado y jerarquía
+============================= */
+
+/* contenedor general */
+footer.footer .container{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* La grid ya existe: .row.footer-grid */
+@media (max-width: 900px){
+
+  /* cada columna como tarjeta */
+  footer.footer .footer-col{
+    background: rgba(255,255,255,.62);
+    border: 1px solid rgba(26,28,32,.10);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 10px 24px rgba(0,0,0,.05);
+  }
+
+  html[data-bs-theme="dark"] footer.footer .footer-col{
+    background: rgba(255,255,255,.06);
+    border-color: rgba(231,233,238,.12);
+    box-shadow: 0 10px 24px rgba(0,0,0,.25);
+  }
+
+  /* evita la columna vacía (tu col-md-1) */
+  .footer-grid > .col-md-1{
+    display: none !important;
+  }
+
+  /* separaciones más limpias */
+  footer.footer .footer-grid{
+    row-gap: 14px;
+  }
+
+  /* títulos más claros */
+  footer.footer h2.h6{
+    font-size: 1.05rem;
+    letter-spacing: .2px;
+  }
+
+  /* logo un poco más chico */
+  footer.footer .footer-logo{
+    width: 210px !important;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* redes más “tap-friendly” */
+  footer.footer .nav-social .social-link{
+    width: 44px;
+    height: 44px;
+  }
+
+  /* listas: alineación icono/texto pro */
+  footer.footer .footer-list li{
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    column-gap: 10px;
+    align-items: start;
+  }
+  footer.footer .footer-list li .footer-icon{
+    margin-top: 2px;
+  }
+
+  /* los links "Ver mapa" más visibles */
+  footer.footer .footer-link{
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 12px;
+    background: rgba(186,210,0,.12);
+    border: 1px solid rgba(186,210,0,.25);
+    text-decoration: none !important;
+  }
+  footer.footer .footer-link:hover{
+    background: rgba(186,210,0,.20);
+  }
+
+  html[data-bs-theme="dark"] footer.footer .footer-link{
+    background: rgba(186,210,0,.10);
+    border-color: rgba(186,210,0,.20);
+  }
+
+  /* CTA centrada y con mejor presencia */
+  .footer-cta{
+    text-align: center;
+  }
+  a.btn.btn-collab{
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* barra inferior: que no se vea desbalanceada */
+  .footer-bottom .footer-hours{
+    margin-top: 8px;
+  }
+}
+
+/* Ajuste EXTRA para móvil pequeño */
+@media (max-width: 576px){
+
+  /* reduce ruido de texto */
+  footer.footer .footer-mini{
+    font-size: .93rem;
+  }
+
+  /* correo e IG con salto y mejor lectura */
+  footer.footer .footer-accent-link{
+    display: inline-block;
+    margin-top: 2px;
+    word-break: break-word;
+  }
+
+  /* copy y horarios más centrados */
+  .footer-copy{
+    display: inline-block;
+    line-height: 1.35;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px){
+  .footer-col-right{ text-align: left; }
 }

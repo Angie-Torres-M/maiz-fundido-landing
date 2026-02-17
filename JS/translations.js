@@ -50,11 +50,19 @@ window.translations = {
     history: {
       title: "Nuestra historia",
       p1:
-        "Maíz Fundido nace del amor por crear: diseño, impresión 3D y detalles hechos a mano. Nos inspira lo cotidiano: que una pieza pequeña pueda alegrarte el día, sentirse ligera y acompañarte sin estorbar.",
+        "Maíz Fundido nace como un proyecto de diseño e impresión 3D, con piezas armadas y terminadas a mano. " +
+        "Hacemos accesorios y detalles para quienes disfrutan lo geek, lo cute y las colecciones temáticas.",
       p2:
-        "Creemos en hacer las cosas con calma y con intención. Por eso cuidamos cada etapa: desde el diseño y la impresión, hasta el armado final y los acabados. Cada pieza pasa por manos reales (y con mucho cariño) antes de llegar a ti.",
+        "Trabajamos por pedidos y drops, así que los tiempos pueden variar según el modelo, el acabado y la carga de trabajo. " +
+        "Siempre confirmamos disponibilidad antes de producir.",
       p3:
-        'Nuestra misión es crear accesorios <strong>cute</strong> y con toque <strong>geek</strong> que se sientan especiales, hechos en México, y con un material más consciente: bioplástico <strong>PLA</strong> derivado del almidón de maíz. Nuestros valores son simples: <strong>calidad</strong> en los detalles, <strong>honestidad</strong> en tiempos y procesos, y <strong>cercanía</strong>.',
+        "Usamos <strong>PLA</strong> (bioplástico derivado del almidón de plantas como el maíz) por ser ligero y permitir buen detalle. " +
+        "En aretes, los herrajes son de <strong>acero inoxidable hipoalergénico</strong> (según el modelo).",
+
+      moreBtn: {
+        more: "Ver más",
+        less: "Ver menos"
+      },
       buttons: {
         catalogPdf: "Descargar catálogo de aretes (PDF)",
       },
@@ -104,6 +112,117 @@ window.translations = {
       },
     },
 
+    faq: {
+      title: "Preguntas frecuentes",
+      subtitle: "Resolvemos lo más común. Si te queda duda, escríbenos por Instagram 💛🌽",
+
+      items: {
+        q1: {
+          aria: "Pregunta frecuente: materiales de los productos",
+          q: "¿De qué materiales están hechos los productos? (PLA + herrajes)",
+          tag: "Materiales",
+          a:
+            'Nuestras piezas se imprimen en <strong>PLA</strong> (bioplástico derivado del almidón de plantas como el maíz). ' +
+            'Es <strong>ligero</strong> y permite mucho detalle.<br>' +
+            'En aretes usamos <strong>herrajes de acero inoxidable hipoalergénico</strong> (ganchos/postes, según el modelo).'
+        },
+
+        q2: {
+          aria: "Pregunta frecuente: métodos de pago",
+          q: "¿Qué métodos de pago aceptan y cómo confirmo mi pedido?",
+          tag: "Pagos",
+          a:
+            'Aceptamos <strong>transferencia</strong>, <strong>depósito</strong> y, en algunos casos, <strong>pago con tarjeta</strong>.<br>' +
+            'Para confirmar tu pedido te compartimos el total + envío (si aplica) y los pasos a seguir. ' +
+            'En <strong>personalizados</strong> puede requerirse <strong>anticipo</strong> antes de imprimir/diseñar.'
+        },
+
+        q3: {
+          aria: "Pregunta frecuente: envíos y entregas",
+          q: "Envíos y entregas: ¿hacen envíos? ¿cuánto cuesta? ¿hay entregas en metro?",
+          tag: "Envíos",
+          a:
+            'Hacemos <strong>envíos nacionales</strong> y, si lo necesitas, revisamos <strong>internacionales</strong> por cotización.<br>' +
+            '<strong>Costos guía:</strong> CDMX desde <strong>$80</strong> / resto desde <strong>$180</strong>. ' +
+            'Internacional desde <strong>$380</strong> (varía por país y tamaño). Cotizamos con tu <strong>código postal</strong> y el tamaño del pedido.<br>' +
+            'También ofrecemos <strong>entregas gratis en metro CDMX</strong> (según condiciones: estación, horario y/o monto mínimo). ' +
+            'Te confirmamos disponibilidad por DM. <strong>Tolerancia: 15 min</strong>.'
+        },
+
+        q4: {
+          aria: "Pregunta frecuente: tienda física y puntos de venta",
+          q: "¿Tienen tienda física? ¿Dónde puedo comprar en punto de venta?",
+          tag: "Puntos",
+          a:
+            'No tenemos tienda propia, pero sí estamos en <strong>puntos de venta</strong> y bazares por temporadas.<br>' +
+            'Actualmente puedes encontrar productos seleccionados en <strong>Libre Liebre mini</strong> (Centro CDMX): ' +
+            '<strong>Dr. Mora #9, Local 4</strong> y <strong>Bolívar #8</strong>. ' +
+            'Horario: <strong>todos los días 11:00 am – 8:00 pm</strong>.<br>' +
+            'Lo más actualizado lo anunciamos en redes 💛'
+        },
+
+        q5: {
+          aria: "Pregunta frecuente: stock y productos agotados",
+          q: "¿Qué pasa si un producto está agotado o era de temporada?",
+          tag: "Stock",
+          a:
+            'Si un diseño está agotado, muchas veces podemos <strong>reimprimirlo</strong> o hacer una versión similar. ' +
+            'En piezas de temporada puede depender del molde/diseño y la disponibilidad.<br>' +
+            'El tiempo varía según <strong>carga de trabajo</strong>, número de piezas y acabado (armado/pintado). ' +
+            'Escríbenos con el modelo (o foto) y te confirmamos.'
+        },
+
+        q6: {
+          aria: "Pregunta frecuente: pedidos personalizados",
+          q: "Personalizados: ¿cómo pido uno y cuánto tarda?",
+          tag: "Personal",
+          listAria: "Checklist para pedido personalizado",
+          a1: "Sí 💛 Para cotizar más rápido, idealmente envíanos:",
+          li1: "<strong>Referencia</strong> (foto/idea)",
+          li2: "<strong>Cantidad</strong>",
+          li3: "<strong>Colores</strong> y temática",
+          li4: "<strong>Tamaño aproximado</strong> (si aplica)",
+          li5: "<strong>Ciudad / CP</strong> para envío",
+          li6: "<strong>Fecha</strong> para cuando lo necesitas",
+          a2:
+            'Los personalizados suelen tardar más porque pueden llevar <strong>diseño + pruebas + impresión + armado</strong>. ' +
+            'Te damos un estimado al cotizar.'
+        },
+
+        q7: {
+          aria: "Pregunta frecuente: mayoreo",
+          q: "¿Manejan mayoreo?",
+          tag: "Mayoreo",
+          a:
+            'Sí, en <strong>modelos seleccionados</strong> y a partir de cierta cantidad. ' +
+            'Para darte precio necesitamos: <strong>modelo(s)</strong>, <strong>cantidad</strong>, <strong>acabado</strong> ' +
+            '(armado/pintado si aplica) y <strong>fecha</strong>.<br>' +
+            'Escríbenos y te mandamos opciones y disponibilidad.'
+        },
+
+        q8: {
+          aria: "Pregunta frecuente: comisión y consignación",
+          q: "Quiero vender Maíz Fundido en mi tienda, ¿cómo funciona?",
+          tag: "Colab",
+          a:
+            'Podemos colaborar por <strong>comisión / consignación</strong> en modelos seleccionados. ' +
+            'Para responderte rápido, cuéntanos: <strong>ubicación</strong>, tipo de tienda/público, redes (si tienes) ' +
+            'y qué categorías te interesan.<br>' +
+            'Escríbenos por DM a <a href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer" ' +
+            'style="color:#7AA600; text-decoration:none; font-weight:800;">@maiz_fundido</a> o usa el formulario de contacto.'
+        }
+      },
+
+      side: {
+        badge: "¿No está tu duda?",
+        p1: "Escríbenos por Instagram y te respondemos con gusto.",
+        cta: "Enviar DM",
+        contact: "Ir a Contacto",
+        imgAlt: "Elotito impreso - Maíz Fundido"
+      }
+    },
+
+
     // Contact
     contact: {
       title: "Contacto",
@@ -126,7 +245,7 @@ window.translations = {
         type: {
           custom: "Pedido personalizado",
           collab: "Colaboración",
-          resell: "Quiero vender tus productos (comisión)",
+          resell: "Quiero vender Maíz Fundido (comisión)",
         },
         typeInvalid: "Selecciona una opción, porfa.",
         msgLabel: "Mensaje",
@@ -189,7 +308,7 @@ window.translations = {
       delivery2: "<strong>Envíos nacionales:</strong> CDMX desde $80 / resto desde $180",
       delivery3: "<strong>Internacionales:</strong> desde $380 (cotiza con tu CP)",
 
-      collabTitle: "¿Quieres colaborar o vender en tu tienda?",
+      collabTitle: "¿Quieres colaborar o vender Maiz Fundido en tu tienda?",
       collabBtn: "Proponer colaboración",
       collabNote: "Cuéntanos tu idea y te respondemos.",
 
@@ -245,11 +364,19 @@ window.translations = {
     history: {
       title: "Our story",
       p1:
-        "Maíz Fundido was born from the love of creating: design, 3D printing, and handmade details. We’re inspired by everyday moments — a small piece can brighten your day, feel lightweight, and go with you without getting in the way.",
+        "Maíz Fundido started as a 3D design and printing project, with items assembled and finished by hand. " +
+        "We make accessories and small pieces for people who enjoy geek/cute themes and collectible drops.",
       p2:
-        "We believe in making things calmly and with intention. That’s why we take care of every stage: from design and printing to final assembly and finishing. Every piece goes through real hands (with lots of love) before it reaches you.",
+        "We work by orders and drops, so lead times can vary depending on the model, finish, and workload. " +
+        "We always confirm availability before producing.",
       p3:
-        'Our mission is to create <strong>cute</strong> accessories with a <strong>geek</strong> touch that feel special, made in Mexico, and using a more conscious material: <strong>PLA</strong> bioplastic derived from corn starch. Our values are simple: <strong>quality</strong> in the details, <strong>honesty</strong> in timing and process, and <strong>closeness</strong> (we love chatting ideas and customizing with you).',
+        "We use <strong>PLA</strong> (a bioplastic derived from plant starch, like corn) because it’s lightweight and keeps good detail. " +
+        "For earrings, we use <strong>hypoallergenic stainless-steel</strong> hardware (depending on the model).",
+
+      moreBtn: {
+        more: "See more",
+        less: "See less"
+      },
       buttons: {
         catalogPdf: "Download earrings catalog (PDF)",
       },
@@ -296,6 +423,117 @@ window.translations = {
         p4: { title: "Collectible", badge: "Collectibles", desc: "Perfect for fans: themed or seasonal editions.", aria: "View on Instagram" },
       },
     },
+
+    faq: {
+      title: "Frequently asked questions",
+      subtitle: "Here’s what we get asked the most. If you still have questions, DM us on Instagram 💛🌽",
+
+      items: {
+        q1: {
+          aria: "FAQ: product materials",
+          q: "What materials are the products made of? (PLA + hardware)",
+          tag: "Materials",
+          a:
+            'Our pieces are printed in <strong>PLA</strong> (a bioplastic derived from plant starch, like corn). ' +
+            'It is <strong>lightweight</strong> and allows great detail.<br>' +
+            'For earrings we use <strong>hypoallergenic stainless-steel hardware</strong> (hooks/posts depending on the model).'
+        },
+
+        q2: {
+          aria: "FAQ: payment methods",
+          q: "Which payment methods do you accept and how do I confirm my order?",
+          tag: "Payments",
+          a:
+            'We accept <strong>bank transfer</strong>, <strong>cash deposit</strong>, and in some cases <strong>card payments</strong>.<br>' +
+            'To confirm your order, we’ll share the total + shipping (if applicable) and the next steps. ' +
+            '<strong>Custom orders</strong> may require an <strong>advance payment</strong> before we print/design.'
+        },
+
+        q3: {
+          aria: "FAQ: shipping and delivery",
+          q: "Shipping & delivery: do you ship? how much does it cost? metro meetups?",
+          tag: "Shipping",
+          a:
+            'We do <strong>domestic shipping</strong> and can check <strong>international</strong> options by quote if needed.<br>' +
+            '<strong>Guide prices:</strong> Mexico City from <strong>$80</strong> / other states from <strong>$180</strong>. ' +
+            'International from <strong>$380</strong> (varies by country and package size). We quote with your <strong>ZIP/CP</strong> and order size.<br>' +
+            'We can also offer <strong>free metro meetups in Mexico City</strong> (conditions apply: station, schedule and/or minimum order). ' +
+            'We’ll confirm availability by DM. <strong>Grace time: 15 min</strong>.'
+        },
+
+        q4: {
+          aria: "FAQ: physical store and retail points",
+          q: "Do you have a physical store? Where can I buy at a retail point?",
+          tag: "Retail",
+          a:
+            'We don’t have our own store, but we do sell through <strong>retail points</strong> and seasonal markets.<br>' +
+            'Right now you can find selected items at <strong>Libre Liebre mini</strong> (Downtown Mexico City): ' +
+            '<strong>Dr. Mora #9, Local 4</strong> and <strong>Bolívar #8</strong>. ' +
+            'Hours: <strong>daily 11:00 am – 8:00 pm</strong>.<br>' +
+            'We post the most up-to-date info on our socials 💛'
+        },
+
+        q5: {
+          aria: "FAQ: out of stock and seasonal items",
+          q: "What if an item is out of stock or seasonal?",
+          tag: "Stock",
+          a:
+            'If a design is out of stock, we can often <strong>reprint it</strong> or make a similar version. ' +
+            'For seasonal items, it may depend on the design/mold availability.<br>' +
+            'Timing varies by <strong>workload</strong>, quantity, and finish (assembly/painting). ' +
+            'Send us the model (or a photo) and we’ll confirm.'
+        },
+
+        q6: {
+          aria: "FAQ: custom orders",
+          q: "Custom orders: how do I request one and how long does it take?",
+          tag: "Custom",
+          listAria: "Custom order checklist",
+          a1: "Yes 💛 To quote faster, please send us:",
+          li1: "<strong>Reference</strong> (photo/idea)",
+          li2: "<strong>Quantity</strong>",
+          li3: "<strong>Colors</strong> and theme",
+          li4: "<strong>Approx. size</strong> (if applicable)",
+          li5: "<strong>City / ZIP</strong> for shipping",
+          li6: "<strong>Needed-by date</strong>",
+          a2:
+            'Custom orders can take longer because they may include <strong>design + tests + printing + assembly</strong>. ' +
+            'We’ll share an estimate when quoting.'
+        },
+
+        q7: {
+          aria: "FAQ: wholesale",
+          q: "Do you offer wholesale?",
+          tag: "Wholesale",
+          a:
+            'Yes—on <strong>selected models</strong> and from a certain quantity. ' +
+            'To price it we need: <strong>model(s)</strong>, <strong>quantity</strong>, <strong>finish</strong> ' +
+            '(assembly/painting if applicable) and <strong>date</strong>.<br>' +
+            'Message us and we’ll send options and availability.'
+        },
+
+        q8: {
+          aria: "FAQ: commission and consignment",
+          q: "I want to sell Maíz Fundido in my shop—how does it work?",
+          tag: "Collab",
+          a:
+            'We can collaborate via <strong>commission / consignment</strong> on selected models. ' +
+            'To reply faster, tell us your <strong>location</strong>, shop type/audience, socials (if any) ' +
+            'and which categories you’re interested in.<br>' +
+            'DM us at <a href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer" ' +
+            'style="color:#7AA600; text-decoration:none; font-weight:800;">@maiz_fundido</a> or use the contact form.'
+        }
+      },
+
+      side: {
+        badge: "Still have a question?",
+        p1: "DM us on Instagram and we’ll gladly help.",
+        cta: "Send a DM",
+        contact: "Go to Contact",
+        imgAlt: "Printed elotito - Maíz Fundido"
+      }
+    },
+
 
     contact: {
       title: "Contact",
@@ -355,10 +593,10 @@ window.translations = {
 
     footer: {
 
-      emailLabel: "Correo:", 
+      emailLabel: "Correo:",
       emailAria: "Enviar correo a maizfundido@gmail.com",
-  emailLabel: "Email:",
-  emailAria: "Email maizfundido@gmail.com",
+      emailLabel: "Email:",
+      emailAria: "Email maizfundido@gmail.com",
 
       homeAria: "Go to home",
       igHandleAria: "Instagram @maiz_fundido",

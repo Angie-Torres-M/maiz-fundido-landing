@@ -253,3 +253,12 @@ html[data-bs-theme="dark"] .lang-switch{
     font-size: .7rem !important;
   }
 }
+
+/* menú cerrado por defecto en móvil */
+@media (max-width: 767.98px){
+  .nav-menu{ display: none; }
+  .nav-menu.is-open{ display: block; }
+}
+
+
+

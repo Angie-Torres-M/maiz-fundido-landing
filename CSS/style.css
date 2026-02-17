@@ -452,7 +452,7 @@ html[data-bs-theme="dark"] a.btn.btn-pdf-c *{
 
 .hero-link-card{
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 14px;
   padding: 16px 16px;
   border-radius: 16px;
@@ -492,11 +492,13 @@ html[data-bs-theme="dark"] a.btn.btn-pdf-c *{
   font-weight: 900;
   letter-spacing: .2px;
   color: #1A1C20;
+  text-align: start;
 }
 
 .hero-link-sub{
   font-size: .92rem;
   color: rgba(26,28,32,.62);
+      text-align: start;
 }
 
 .hero-link-arrow{
