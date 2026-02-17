@@ -81,3 +81,24 @@ document.addEventListener("i18n:refresh", (e) => {
   applyLanguage(lang);
   bindLangToggles();
 });
+
+
+
+(() => {
+  const btn = document.getElementById("historyToggleBtn");
+  const more = document.getElementById("history-more");
+  if (!btn || !more) return;
+
+  const keyMore = btn.getAttribute("data-i18n") || "";
+  const keyLess = btn.getAttribute("data-i18n-alt-text") || "";
+
+  const setLabel = (expanded) => {
+    // si tu i18n.js ya traduce, usamos el texto actual como fallback
+    const moreText = btn.dataset.moreText || btn.textContent || "Ver más";
+    const lessText = btn.dataset.lessText || "Ver menos";
+    btn.textContent = expanded ? lessText : moreText;
+  };
+
+  more.addEventListener("shown.bs.collapse", () => setLabel(true));
+  more.addEventListener("hidden.bs.collapse", () => setLabel(false));
+})();

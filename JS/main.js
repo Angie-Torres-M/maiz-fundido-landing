@@ -221,3 +221,77 @@ document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
   window.addEventListener("scroll", onScroll, { passive: true });
   mq.addEventListener?.("change", () => header.classList.remove("is-hidden"));
 })();
+
+
+
+
+// ==============================
+// Ocultar menua hamburguesa al hacer click fuera de él (móvil)
+// ==============================
+(() => {
+  const OPEN_CLASS = "is-open";
+
+  function getToggle(){ return document.getElementById("navToggle"); }
+  function getMenu(){ return document.getElementById("navMenu"); }
+
+  function openMenu(menu, toggle){
+    menu.classList.add(OPEN_CLASS);
+    toggle?.setAttribute("aria-expanded", "true");
+  }
+
+  function closeMenu(menu, toggle){
+    menu.classList.remove(OPEN_CLASS);
+    toggle?.setAttribute("aria-expanded", "false");
+  }
+
+  function isOpen(menu){
+    return menu.classList.contains(OPEN_CLASS);
+  }
+
+  // 1) Click en el botón hamburguesa (aunque se cargue después)
+  document.addEventListener("click", (e) => {
+    const toggle = getToggle();
+    const menu = getMenu();
+    if (!menu) return;
+
+    // Si el click fue en el botón (o dentro)
+    if (toggle && toggle.contains(e.target)) {
+      e.preventDefault();
+      e.stopPropagation();
+      isOpen(menu) ? closeMenu(menu, toggle) : openMenu(menu, toggle);
+    }
+  });
+
+  // 2) Click fuera para cerrar
+  document.addEventListener("click", (e) => {
+    const toggle = getToggle();
+    const menu = getMenu();
+    if (!menu || !toggle) return;
+
+    if (!isOpen(menu)) return;
+
+    const clickedInsideMenu = menu.contains(e.target);
+    const clickedToggle = toggle.contains(e.target);
+
+    if (!clickedInsideMenu && !clickedToggle) closeMenu(menu, toggle);
+  });
+
+  // 3) Click en links del menú (delegado)
+  document.addEventListener("click", (e) => {
+    const menu = getMenu();
+    const toggle = getToggle();
+    if (!menu || !toggle) return;
+
+    if (!isOpen(menu)) return;
+
+    const link = e.target.closest("#navMenu a, #navMenu button");
+    if (link) closeMenu(menu, toggle);
+  });
+
+  // 4) Cambio a desktop cierra
+  window.matchMedia("(min-width: 768px)").addEventListener("change", () => {
+    const menu = getMenu();
+    const toggle = getToggle();
+    if (menu && toggle) closeMenu(menu, toggle);
+  });
+})();

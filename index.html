@@ -132,23 +132,39 @@
           <div class="col-lg-8">
             <h2 class="section-title" data-i18n="history.title">Nuestra historia</h2>
 
-            <p data-i18n="history.p1">
-              Maíz Fundido nace del amor por crear: diseño, impresión 3D y detalles hechos a mano.
-              Nos inspira lo cotidiano: que una pieza pequeña pueda alegrarte el día, sentirse ligera y acompañarte sin estorbar.
-            </p>
+              <!-- Texto corto visible -->
+        <p data-i18n="history.p1">
+          Maíz Fundido nace como un proyecto de diseño e impresión 3D, con piezas armadas y terminadas a mano.
+          Hacemos accesorios y detalles para quienes disfrutan lo geek, lo cute y las colecciones temáticas.
+        </p>
 
-            <p data-i18n="history.p2">
-              Creemos en hacer las cosas con calma y con intención. Por eso cuidamos cada etapa:
-              desde el diseño y la impresión, hasta el armado final y los acabados.
-              Cada pieza pasa por manos reales (y con mucho cariño) antes de llegar a ti.
-            </p>
+        <!-- Bloque extra ocultable -->
+        <div id="history-more" class="collapse">
+          <p data-i18n="history.p2">
+            Trabajamos por pedidos y drops, así que los tiempos pueden variar según el modelo, el acabado y la carga de trabajo.
+            Siempre confirmamos disponibilidad antes de producir.
+          </p>
 
-            <p data-i18n="history.p3">
-              Nuestra misión es crear accesorios <strong>cute</strong> y con toque <strong>geek</strong> que se sientan
-              especiales, hechos en México, y con un material más consciente: bioplástico <strong>PLA</strong> derivado
-              del almidón de maíz. Nuestros valores son simples: <strong>calidad</strong> en los detalles,
-              <strong>honestidad</strong> en tiempos y procesos, y <strong>cercanía</strong>.
-            </p>
+          <p data-i18n="history.p3">
+            Usamos <strong>PLA</strong> (bioplástico derivado del almidón de plantas como el maíz) por ser ligero y permitir buen detalle.
+            En aretes, los herrajes son de <strong>acero inoxidable hipoalergénico</strong> (según el modelo).
+          </p>
+        </div>
+
+        <!-- Botón ver más / ver menos -->
+        <button
+          class="btn btn-link p-0 fw-semibold text-decoration-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#history-more"
+          aria-expanded="false"
+          aria-controls="history-more"
+          id="historyToggleBtn"
+          data-i18n="history.moreBtn.more"
+          data-i18n-alt-text="history.moreBtn.less"
+        >
+          Ver más
+        </button>
 
             <div class="d-flex flex-wrap gap-2 mt-3">
               <a href="./Doc/CatalogoAretes.pdf" class="btn btn-outline-primary" download target="_blank"
@@ -291,6 +307,7 @@
     </section>
 
     <!-- DESTACADOS -->
+       <footer id="site-products"></footer>
     <section id="destacados" class="py-5 section-alt container">
       <div class="container">
         <h2 class="section-title text-center mb-4" data-i18n="featured.title">Productos destacados</h2>
@@ -503,7 +520,7 @@
                       <option value="" selected data-i18n="contact.form.typePh">Selecciona una opción</option>
                       <option value="custom" data-i18n="contact.form.type.custom">Pedido personalizado</option>
                       <option value="collab" data-i18n="contact.form.type.collab">Colaboración</option>
-                      <option value="resell" data-i18n="contact.form.type.resell">Quiero vender tus productos (comisión)</option>
+                      <option value="resell" data-i18n="contact.form.type.resell">Quiero vender Maíz Fundido (comisión)</option>
                     </select>
                     <div class="invalid-feedback" data-i18n="contact.form.typeInvalid">
                       Selecciona una opción, porfa.
@@ -557,8 +574,310 @@
     <!-- FAQ (tu HTML se queda igual; asumo que translations ya tiene todas esas keys) -->
     <!-- ... tu sección FAQ aquí sin cambios ... -->
 
+<!-- FAQ -->
+<section id="faq" class="py-5 section-alt container">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title mb-2" data-i18n="faq.title">Preguntas frecuentes</h2>
+      <p class="text-muted mb-0" data-i18n="faq.subtitle">
+        Resolvemos lo más común. Si te queda duda, escríbenos por Instagram 💛🌽
+      </p>
+    </div>
+
+    <div class="row g-4 align-items-start">
+      <!-- Accordion -->
+      <div class="col-lg-7">
+        <div class="accordion mf-accordion" id="faqAccordion">
+
+          <!-- 1) Materiales + herrajes -->
+          <div class="accordion-item mf-acc-item">
+            <h3 class="accordion-header" id="faqH1">
+              <button
+                class="accordion-button mf-acc-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqC1"
+                aria-expanded="true"
+                aria-controls="faqC1"
+                data-i18n-aria="faq.items.q1.aria"
+              >
+                <span class="mf-q" data-i18n="faq.items.q1.q">
+                  ¿De qué materiales están hechos los productos? (PLA + herrajes)
+                </span>
+                <span class="mf-chip" data-i18n="faq.items.q1.tag">Materiales</span>
+              </button>
+            </h3>
+
+            <div id="faqC1" class="accordion-collapse collapse show" aria-labelledby="faqH1" data-bs-parent="#faqAccordion">
+              <div class="accordion-body mf-acc-body" data-i18n="faq.items.q1.a">
+                Nuestras piezas se imprimen en <strong>PLA</strong> (bioplástico derivado del almidón de plantas como el maíz).
+                Es <strong>ligero</strong> y permite mucho detalle.<br>
+                En aretes usamos <strong>herrajes de acero inoxidable hipoalergénico</strong> (ganchos/postes, según el modelo).
+              </div>
+            </div>
+          </div>
+
+          <!-- 2) Pagos -->
+          <div class="accordion-item mf-acc-item">
+            <h3 class="accordion-header" id="faqH2">
+              <button
+                class="accordion-button collapsed mf-acc-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqC2"
+                aria-expanded="false"
+                aria-controls="faqC2"
+                data-i18n-aria="faq.items.q2.aria"
+              >
+                <span class="mf-q" data-i18n="faq.items.q2.q">
+                  ¿Qué métodos de pago aceptan y cómo confirmo mi pedido?
+                </span>
+                <span class="mf-chip" data-i18n="faq.items.q2.tag">Pagos</span>
+              </button>
+            </h3>
+
+            <div id="faqC2" class="accordion-collapse collapse" aria-labelledby="faqH2" data-bs-parent="#faqAccordion">
+              <div class="accordion-body mf-acc-body" data-i18n="faq.items.q2.a">
+                Aceptamos <strong>transferencia</strong>, <strong>depósito</strong> y, en algunos casos, <strong>pago con tarjeta</strong>.<br>
+                Para confirmar tu pedido te compartimos el total + envío (si aplica) y los pasos a seguir.
+                En <strong>personalizados</strong> puede requerirse <strong>anticipo</strong> antes de imprimir/diseñar.
+              </div>
+            </div>
+          </div>
+
+          <!-- 3) Envíos + entregas + costos -->
+          <div class="accordion-item mf-acc-item">
+            <h3 class="accordion-header" id="faqH3">
+              <button
+                class="accordion-button collapsed mf-acc-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqC3"
+                aria-expanded="false"
+                aria-controls="faqC3"
+                data-i18n-aria="faq.items.q3.aria"
+              >
+                <span class="mf-q" data-i18n="faq.items.q3.q">
+                  Envíos y entregas: ¿hacen envíos? ¿cuánto cuesta? ¿hay entregas en metro?
+                </span>
+                <span class="mf-chip" data-i18n="faq.items.q3.tag">Envíos</span>
+              </button>
+            </h3>
+
+            <div id="faqC3" class="accordion-collapse collapse" aria-labelledby="faqH3" data-bs-parent="#faqAccordion">
+              <div class="accordion-body mf-acc-body" data-i18n="faq.items.q3.a">
+                Hacemos <strong>envíos nacionales</strong> y, si lo necesitas, revisamos <strong>internacionales</strong> por cotización.<br>
+                <strong>Costos guía:</strong> CDMX desde <strong>$80</strong> / resto desde <strong>$180</strong>.
+                Internacional desde <strong>$380</strong> (varía por país y tamaño). Cotizamos con tu <strong>código postal</strong> y el tamaño del pedido.<br>
+                También ofrecemos <strong>entregas gratis en metro CDMX</strong> (según condiciones: estación, horario y/o monto mínimo).
+                Te confirmamos disponibilidad por DM. <strong>Tolerancia: 15 min</strong>.
+              </div>
+            </div>
+          </div>
+
+          <!-- 4) Puntos de venta + tienda física -->
+          <div class="accordion-item mf-acc-item">
+            <h3 class="accordion-header" id="faqH4">
+              <button
+                class="accordion-button collapsed mf-acc-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqC4"
+                aria-expanded="false"
+                aria-controls="faqC4"
+                data-i18n-aria="faq.items.q4.aria"
+              >
+                <span class="mf-q" data-i18n="faq.items.q4.q">
+                  ¿Tienen tienda física? ¿Dónde puedo comprar en punto de venta?
+                </span>
+                <span class="mf-chip" data-i18n="faq.items.q4.tag">Puntos</span>
+              </button>
+            </h3>
+
+            <div id="faqC4" class="accordion-collapse collapse" aria-labelledby="faqH4" data-bs-parent="#faqAccordion">
+              <div class="accordion-body mf-acc-body" data-i18n="faq.items.q4.a">
+                No tenemos tienda propia, pero sí estamos en <strong>puntos de venta</strong> y bazares por temporadas.<br>
+                Actualmente puedes encontrar productos seleccionados en <strong>Libre Liebre mini</strong> (Centro CDMX):
+                <strong>Dr. Mora #9, Local 4</strong> y <strong>Bolívar #8</strong>.
+                Horario: <strong>todos los días 11:00 am – 8:00 pm</strong>.<br>
+                Lo más actualizado lo anunciamos en redes 💛
+              </div>
+            </div>
+          </div>
+
+          <!-- 5) Stock / agotados / temporada -->
+          <div class="accordion-item mf-acc-item">
+            <h3 class="accordion-header" id="faqH5">
+              <button
+                class="accordion-button collapsed mf-acc-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqC5"
+                aria-expanded="false"
+                aria-controls="faqC5"
+                data-i18n-aria="faq.items.q5.aria"
+              >
+                <span class="mf-q" data-i18n="faq.items.q5.q">
+                  ¿Qué pasa si un producto está agotado o era de temporada?
+                </span>
+                <span class="mf-chip" data-i18n="faq.items.q5.tag">Stock</span>
+              </button>
+            </h3>
+
+            <div id="faqC5" class="accordion-collapse collapse" aria-labelledby="faqH5" data-bs-parent="#faqAccordion">
+              <div class="accordion-body mf-acc-body" data-i18n="faq.items.q5.a">
+                Si un diseño está agotado, muchas veces podemos <strong>reimprimirlo</strong> o hacer una versión similar.
+                En piezas de temporada puede depender del molde/diseño y la disponibilidad.<br>
+                El tiempo varía según <strong>carga de trabajo</strong>, número de piezas y acabado (armado/pintado).
+                Escríbenos con el modelo (o foto) y te confirmamos.
+              </div>
+            </div>
+          </div>
+
+          <!-- 6) Personalizados (qué necesito + tiempos) -->
+          <div class="accordion-item mf-acc-item">
+            <h3 class="accordion-header" id="faqH6">
+              <button
+                class="accordion-button collapsed mf-acc-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqC6"
+                aria-expanded="false"
+                aria-controls="faqC6"
+                data-i18n-aria="faq.items.q6.aria"
+              >
+                <span class="mf-q" data-i18n="faq.items.q6.q">
+                  Personalizados: ¿cómo pido uno y cuánto tarda?
+                </span>
+                <span class="mf-chip" data-i18n="faq.items.q6.tag">Personal</span>
+              </button>
+            </h3>
+
+            <div id="faqC6" class="accordion-collapse collapse" aria-labelledby="faqH6" data-bs-parent="#faqAccordion">
+              <div class="accordion-body mf-acc-body">
+                <p class="mb-2" data-i18n="faq.items.q6.a1">Sí 💛 Para cotizar más rápido, idealmente envíanos:</p>
+                <ul class="mt-2 mb-2" aria-label="Checklist personalizado" data-i18n-aria="faq.items.q6.listAria">
+                  <li data-i18n="faq.items.q6.li1"><strong>Referencia</strong> (foto/idea)</li>
+                  <li data-i18n="faq.items.q6.li2"><strong>Cantidad</strong></li>
+                  <li data-i18n="faq.items.q6.li3"><strong>Colores</strong> y temática</li>
+                  <li data-i18n="faq.items.q6.li4"><strong>Tamaño aproximado</strong> (si aplica)</li>
+                  <li data-i18n="faq.items.q6.li5"><strong>Ciudad / CP</strong> para envío</li>
+                  <li data-i18n="faq.items.q6.li6"><strong>Fecha</strong> para cuando lo necesitas</li>
+                </ul>
+                <p class="mb-0" data-i18n="faq.items.q6.a2">
+                  Los personalizados suelen tardar más porque pueden llevar <strong>diseño + pruebas + impresión + armado</strong>.
+                  Te damos un estimado al cotizar.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7) Mayoreo -->
+          <div class="accordion-item mf-acc-item">
+            <h3 class="accordion-header" id="faqH7">
+              <button
+                class="accordion-button collapsed mf-acc-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqC7"
+                aria-expanded="false"
+                aria-controls="faqC7"
+                data-i18n-aria="faq.items.q7.aria"
+              >
+                <span class="mf-q" data-i18n="faq.items.q7.q">¿Manejan mayoreo?</span>
+                <span class="mf-chip" data-i18n="faq.items.q7.tag">Mayoreo</span>
+              </button>
+            </h3>
+
+            <div id="faqC7" class="accordion-collapse collapse" aria-labelledby="faqH7" data-bs-parent="#faqAccordion">
+              <div class="accordion-body mf-acc-body" data-i18n="faq.items.q7.a">
+                Sí, en <strong>modelos seleccionados</strong> y a partir de cierta cantidad.
+                Para darte precio necesitamos: <strong>modelo(s)</strong>, <strong>cantidad</strong>, <strong>acabado</strong>
+                (armado/pintado si aplica) y <strong>fecha</strong>.<br>
+                Escríbenos y te mandamos opciones y disponibilidad.
+              </div>
+            </div>
+          </div>
+
+          <!-- 8) Colaboración / consignación -->
+          <div class="accordion-item mf-acc-item">
+            <h3 class="accordion-header" id="faqH8">
+              <button
+                class="accordion-button collapsed mf-acc-btn"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqC8"
+                aria-expanded="false"
+                aria-controls="faqC8"
+                data-i18n-aria="faq.items.q8.aria"
+              >
+                <span class="mf-q" data-i18n="faq.items.q8.q">
+                  Quiero vender Maíz Fundido en mi tienda, ¿cómo funciona?
+                </span>
+                <span class="mf-chip" data-i18n="faq.items.q8.tag">Colab</span>
+              </button>
+            </h3>
+
+            <div id="faqC8" class="accordion-collapse collapse" aria-labelledby="faqH8" data-bs-parent="#faqAccordion">
+              <div class="accordion-body mf-acc-body" data-i18n="faq.items.q8.a">
+                Podemos colaborar por <strong>comisión / consignación</strong> en modelos seleccionados.
+                Para responderte rápido, cuéntanos: <strong>ubicación</strong>, tipo de tienda/público, redes (si tienes)
+                y qué categorías te interesan.<br>
+                Escríbenos por DM a
+                <a href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer"
+                  style="color:#7AA600; text-decoration:none; font-weight:800;">
+                  @maiz_fundido
+                </a>
+                o usa el formulario de contacto.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Side card -->
+      <div class="col-lg-5">
+        <div class="mf-faq-card">
+          <div class="mf-faq-badge">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            <span data-i18n="faq.side.badge">¿No está tu duda?</span>
+          </div>
+
+          <p class="mb-3" data-i18n="faq.side.p1">
+            Escríbenos por Instagram y te respondemos con gusto.
+          </p>
+
+          <div class="d-grid gap-2">
+            <a class="btn btn-primary mf-btn-accent" href="https://www.instagram.com/maiz_fundido/" target="_blank" rel="noreferrer">
+              <i class="fa-brands fa-instagram me-2" aria-hidden="true"></i>
+              <span data-i18n="faq.side.cta">Enviar DM</span>
+            </a>
+            <a class="btn btn-outline-secondary" href="#contacto" data-i18n="faq.side.contact">
+              Ir a Contacto
+            </a>
+          </div>
+
+          <img
+            src="images/elotitoimpreso.png"
+            alt="Elotito impreso - Maíz Fundido"
+            data-i18n-alt="faq.side.imgAlt"
+            class="img-fluid mt-4 rounded"
+            width="1500px"
+          >
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+    
+
     <section id="tienda" class="py-5 section-alt-mint">
-      <div class="container">
+      <div class="container" >
         <div class="cv-card text-center p-4 p-md-5">
 
           <p class="mf-kicker text-uppercase text-accent mb-2" data-i18n="shop.kicker">Tienda en línea</p>
