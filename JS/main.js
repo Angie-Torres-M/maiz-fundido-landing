@@ -1,28 +1,24 @@
 // ======================================================
-// main.js - Lógica global del portafolio
-// - Inyecta header.html y footer.html
-// - Controla tema claro/oscuro (desktop + móvil)
-// - Maneja "Ver más / Ver menos" (TRADUCIBLE)
-// - Activa menú hamburguesa en móvil
-// - Re-aplica i18n después de inyectar header/footer
+// main.js - Lógica global del sitio
 // ======================================================
-
 
 document.addEventListener("DOMContentLoaded", async () => {
   // 1) Inyectar header y footer
   await includeHTML("#site-header", "./header.html");
   await includeHTML("#site-footer", "./footer.html");
 
-  // 2) Init features (ahora sí existen botones del header)
+  // 2) Init features (ya existen elementos del header)
   initTheme();
   initThemeButtons();
-  initHeader();
 
   // 3) Re-aplicar i18n (porque header/footer se inyectaron después)
   refreshI18n();
 
-  // 4) Ver más/menos (después de i18n para tomar labels correctas)
+  // 4) Ver más/menos (después de i18n)
   initVerMasButtons();
+
+  // 5) Menú hamburguesa (después de inyectar header)
+  initMobileMenu();
 });
 
 // ==============================
@@ -58,10 +54,9 @@ function updateThemeToggleText(theme) {
 
   buttons.forEach((toggleBtn) => {
     const icon = toggleBtn?.querySelector("i");
-    const textSpan = toggleBtn?.querySelector("span"); // solo existe en desktop
+    const textSpan = toggleBtn?.querySelector("span");
     if (!icon) return;
 
-    // Texto traducible desde translations
     const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
     const darkLabel = getT(lang, "theme.dark") ?? (lang === "en" ? "Dark mode" : "Modo oscuro");
     const lightLabel = getT(lang, "theme.light") ?? (lang === "en" ? "Light mode" : "Modo claro");
@@ -105,26 +100,9 @@ function initThemeButtons() {
   }
 }
 
-
-// Header menu (hamburguesa)
-
-function initHeader() {
-  const toggle = document.getElementById("navToggle");
-  const menu = document.getElementById("navMenu");
-
-  if (toggle && menu && !toggle.dataset.bound) {
-    toggle.addEventListener("click", () => {
-      menu.classList.toggle("active");
-      const isOpen = menu.classList.contains("active");
-      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-    toggle.dataset.bound = "true";
-  }
-}
-
-
+// ==============================
 // Ver más / Ver menos (traducible)
-
+// ==============================
 function initVerMasButtons() {
   const buttons = document.querySelectorAll('[data-toggle="ver-mas"]');
 
@@ -158,7 +136,6 @@ function initVerMasButtons() {
 // ==============================
 // i18n refresh after injecting header/footer
 // ==============================
-
 function refreshI18n() {
   const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
 
@@ -167,7 +144,6 @@ function refreshI18n() {
 
   document.dispatchEvent(new CustomEvent("i18n:refresh", { detail: { lang } }));
 }
-
 
 // ==============================
 // helper: get translation by path
@@ -180,118 +156,67 @@ function getT(lang, path) {
   }
 }
 
-// alt
-document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
-  const key = el.dataset.i18nAlt;
-  const t = getNestedTranslation(window.translations[lang], key);
-  if (t !== undefined && t !== null) el.setAttribute("alt", t);
-});
+// ==============================
+// ALT i18n (FIX: lang estaba fuera de scope)
+// ==============================
+function refreshAltI18n() {
+  const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const key = el.dataset.i18nAlt;
+    const t = getT(lang, key);
+    if (t !== undefined && t !== null) el.setAttribute("alt", t);
+  });
+}
+
+document.addEventListener("i18n:refresh", refreshAltI18n);
 
 // ==============================
-// Ocultar header en móvil al hacer scroll hacia abajo
+// Menú hamburguesa (móvil) + backdrop
 // ==============================
-(() => {
-  const header = document.querySelector(".header-fijo");
-  if (!header) return;
+function initMobileMenu() {
+  const toggle = document.getElementById("navToggle");
+  const menu = document.getElementById("navMenu");
+  const backdrop = document.getElementById("navBackdrop");
 
-  const mq = window.matchMedia("(max-width: 767.98px)");
-  let lastY = window.scrollY;
-  const delta = 8;
-  const showAfterTop = 10;
+  if (!toggle || !menu || !backdrop) return;
 
-  function onScroll() {
-    if (!mq.matches) return;
+  const OPEN_CLASS = "active";
 
-    const y = window.scrollY;
-
-    if (y <= showAfterTop) {
-      header.classList.remove("is-hidden");
-      lastY = y;
-      return;
-    }
-
-    if (Math.abs(y - lastY) < delta) return;
-
-    if (y > lastY) header.classList.add("is-hidden");
-    else header.classList.remove("is-hidden");
-
-    lastY = y;
-  }
-
-  window.addEventListener("scroll", onScroll, { passive: true });
-  mq.addEventListener?.("change", () => header.classList.remove("is-hidden"));
-})();
-
-
-
-
-// ==============================
-// Ocultar menua hamburguesa al hacer click fuera de él (móvil)
-// ==============================
-(() => {
-  const OPEN_CLASS = "is-open";
-
-  function getToggle(){ return document.getElementById("navToggle"); }
-  function getMenu(){ return document.getElementById("navMenu"); }
-
-  function openMenu(menu, toggle){
+  const open = () => {
     menu.classList.add(OPEN_CLASS);
-    toggle?.setAttribute("aria-expanded", "true");
-  }
+    backdrop.classList.add(OPEN_CLASS);
+    toggle.setAttribute("aria-expanded", "true");
+  };
 
-  function closeMenu(menu, toggle){
+  const close = () => {
     menu.classList.remove(OPEN_CLASS);
-    toggle?.setAttribute("aria-expanded", "false");
-  }
+    backdrop.classList.remove(OPEN_CLASS);
+    toggle.setAttribute("aria-expanded", "false");
+  };
 
-  function isOpen(menu){
-    return menu.classList.contains(OPEN_CLASS);
-  }
+  const isOpen = () => menu.classList.contains(OPEN_CLASS);
 
-  // 1) Click en el botón hamburguesa (aunque se cargue después)
-  document.addEventListener("click", (e) => {
-    const toggle = getToggle();
-    const menu = getMenu();
-    if (!menu) return;
-
-    // Si el click fue en el botón (o dentro)
-    if (toggle && toggle.contains(e.target)) {
-      e.preventDefault();
-      e.stopPropagation();
-      isOpen(menu) ? closeMenu(menu, toggle) : openMenu(menu, toggle);
-    }
+  // Botón
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    isOpen() ? close() : open();
   });
 
-  // 2) Click fuera para cerrar
-  document.addEventListener("click", (e) => {
-    const toggle = getToggle();
-    const menu = getMenu();
-    if (!menu || !toggle) return;
-
-    if (!isOpen(menu)) return;
-
-    const clickedInsideMenu = menu.contains(e.target);
-    const clickedToggle = toggle.contains(e.target);
-
-    if (!clickedInsideMenu && !clickedToggle) closeMenu(menu, toggle);
+  // Click fuera (backdrop)
+  backdrop.addEventListener("click", () => {
+    if (isOpen()) close();
   });
 
-  // 3) Click en links del menú (delegado)
-  document.addEventListener("click", (e) => {
-    const menu = getMenu();
-    const toggle = getToggle();
-    if (!menu || !toggle) return;
-
-    if (!isOpen(menu)) return;
-
-    const link = e.target.closest("#navMenu a, #navMenu button");
-    if (link) closeMenu(menu, toggle);
+  // Click en links del menú
+  menu.addEventListener("click", (e) => {
+    const link = e.target.closest("a, button");
+    if (link && isOpen()) close();
   });
 
-  // 4) Cambio a desktop cierra
-  window.matchMedia("(min-width: 768px)").addEventListener("change", () => {
-    const menu = getMenu();
-    const toggle = getToggle();
-    if (menu && toggle) closeMenu(menu, toggle);
-  });
-})();
+  // Resize a desktop -> cerrar
+  window.matchMedia("(min-width: 768px)").addEventListener("change", () => close());
+
+  // Opcional: si haces scroll y está abierto, cierra
+  // window.addEventListener("scroll", () => { if (isOpen()) close(); }, { passive: true });
+}

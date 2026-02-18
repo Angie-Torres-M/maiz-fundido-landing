@@ -10,6 +10,7 @@ window.translations = {
       about: "Nuestra historia",
       offer: "¿Qué ofrecemos?",
       featured: "Destacados",
+      earring: "Aretes",
       contact: "Contacto",
       faq: "FAQ",
 
@@ -64,7 +65,7 @@ window.translations = {
         less: "Ver menos"
       },
       buttons: {
-        catalogPdf: "Descargar catálogo de aretes (PDF)",
+        catalogPdf: "Visualizar catálogo de aretes",
       },
       note: {
         catalogUpdate: "Nota: el catálogo está en constante actualización. Aún faltan productos por subir.",
@@ -110,6 +111,12 @@ window.translations = {
         p3: { title: "Pieza personalizada", badge: "Personalizados", desc: "Podemos adaptar colores, temática o detalles según tu idea.", aria: "Ver en Instagram" },
         p4: { title: "Coleccionable", badge: "Coleccionables", desc: "Ideal para fans: edición temática o por temporada.", aria: "Ver en Instagram" },
       },
+    },
+
+
+    earring: {
+      title: "Catálogo de aretes",
+      subtitle: "Explora nuestros aretes impresos en 3D: ligeros, detallados y armados a mano. Pide por DM o solicita cotización."
     },
 
     faq: {
@@ -276,7 +283,7 @@ window.translations = {
         "Estamos preparando la tienda para que puedas comprar más fácil. Mientras tanto, puedes pedir por DM y te compartimos catálogo, precios y tiempos.",
       cta: {
         ig: "Pedir por Instagram",
-        pdf: "Descargar catálogo (PDF)",
+        pdf: "Visualizar catálogo",
       },
       note: "Nota: el catálogo está en constante actualización. Aún faltan productos por subir.",
     },
@@ -328,6 +335,7 @@ window.translations = {
       about: "Our story",
       offer: "What we offer",
       featured: "Featured",
+      earring: "Earrings",
       contact: "Contact",
       faq: "FAQ",
 
@@ -378,7 +386,7 @@ window.translations = {
         less: "See less"
       },
       buttons: {
-        catalogPdf: "Download earrings catalog (PDF)",
+        catalogPdf: "Visualize earrings catalog",
       },
       note: {
         catalogUpdate: "Note: the catalog is constantly updated. More products are coming soon.",
@@ -423,6 +431,12 @@ window.translations = {
         p4: { title: "Collectible", badge: "Collectibles", desc: "Perfect for fans: themed or seasonal editions.", aria: "View on Instagram" },
       },
     },
+
+    earring: {
+      title: "Earring catalog",
+      subtitle: "Browse our 3D-printed earrings: lightweight, detailed, and hand-assembled. Order via DM or request a quote."
+    },
+
 
     faq: {
       title: "Frequently asked questions",
@@ -586,7 +600,7 @@ window.translations = {
         "We’re preparing the store so you can shop more easily. Meanwhile, you can order via DM and we’ll share the catalog, pricing and timing.",
       cta: {
         ig: "Order via Instagram",
-        pdf: "Download catalog (PDF)",
+        pdf: "Visualize catalog",
       },
       note: "Note: the catalog is constantly updated. More products are coming soon.",
     },

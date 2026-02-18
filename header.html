@@ -1,24 +1,24 @@
 <!-- HEADER (fragmento) -->
 <section class="header-fijo mx-auto">
   <header>
+
     <nav class="angie-navbar">
       <div class="nav-container">
 
         <!-- Logo -->
-        <a href="./index.html#inicio" class="logo-link"
-          aria-label="Ir a inicio"
-          data-i18n-aria="nav.homeAria">
+        <a href="./index.html#inicio"
+           class="logo-link"
+           aria-label="Ir a inicio"
+           data-i18n-aria="nav.homeAria">
           <img
             src="./images/logomaizfundido2en1.png"
             class="logo logo-light"
             alt="Maíz Fundido logo"
-            style="width: 150px;"
           >
           <img
             src="./images/logomaizfundido2en1MO.png"
             class="logo logo-dark"
             alt="Maíz Fundido logo"
-            style="width: 150px;"
           >
         </a>
 
@@ -49,13 +49,13 @@
         </button>
 
         <!-- Botón hamburguesa -->
- <button
-    class="nav-toggle"
-    id="navToggle"
-    type="button"
-    aria-label="Abrir menú"
-    aria-expanded="false"
-  >☰</button>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >☰</button>
 
         <!-- Menú -->
         <nav class="nav-menu" id="navMenu" aria-label="Menú principal">
@@ -63,6 +63,7 @@
             <li><a href="#historia" data-i18n="nav.about">Nuestra historia</a></li>
             <li><a href="#ofrecemos" data-i18n="nav.offer">¿Qué ofrecemos?</a></li>
             <li><a href="#destacados" data-i18n="nav.featured">Destacados</a></li>
+            <li><a href="#aretes" data-i18n="nav.earring">Aretes</a></li>
             <li><a href="#contacto" data-i18n="nav.contact">Contacto</a></li>
             <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
           </ul>
@@ -101,6 +102,9 @@
 
       </div>
     </nav>
+
+    <!--  BACKDROP: fuera del nav y del contenedor (clave para cerrar al click fuera) -->
+    <div id="navBackdrop" class="nav-backdrop" aria-hidden="true"></div>
 
     <div class="header-separador" id="headerSeparador"></div>
   </header>
