@@ -2,14 +2,13 @@
    HEADER / NAVBAR (Maíz Fundido)
 ====================================== */
 
-/* Header fijo arriba + animación hide/show (móvil) */
 .header-fijo{
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  z-index: 1030;                 /* consistente con Bootstrap */
+  z-index: 1030;
   transform: translateY(0);
   transition: transform .25s ease;
 }
@@ -21,7 +20,6 @@
   }
 }
 
-/* Navbar principal (glass) */
 .angie-navbar{
   width: 100%;
   background-color: rgba(15, 17, 21, 0.90);
@@ -32,18 +30,15 @@
   padding: 0.6rem 1rem;
 }
 
-/* Modo claro */
 html[data-bs-theme="light"] .angie-navbar{
   background-color: rgba(255, 255, 255, 0.95);
   color: #111;
 }
 
-/* Modo oscuro */
 html[data-bs-theme="dark"] .angie-navbar{
   color: #fff;
 }
 
-/* Contenedor interno */
 .nav-container{
   width: 100%;
   max-width: 1200px;
@@ -53,19 +48,16 @@ html[data-bs-theme="dark"] .angie-navbar{
   gap: .75rem;
 }
 
-/* Logo */
 .logo-link img{
   border-radius: 8px;
   height: auto;
 }
 
-/* Tamaño logo: desktop */
 .angie-navbar .logo{
   width: 150px;
   height: auto;
 }
 
-/* Tamaño logo: móvil */
 @media (max-width: 767.98px){
   .angie-navbar .logo{
     width: 100px !important;
@@ -78,14 +70,13 @@ html[data-bs-theme="dark"] .angie-navbar{
 html[data-bs-theme="dark"] .logo-light{ display: none; }
 html[data-bs-theme="dark"] .logo-dark{ display: inline-block; }
 
-/* Separador */
 .header-separador{
   width: 100%;
   height: 2px;
   background-color: #bad200;
 }
 
-/* Hamburguesa (solo móvil) */
+/* Hamburguesa */
 .nav-toggle{
   display: none;
   background: none;
@@ -115,27 +106,41 @@ html[data-bs-theme="dark"] .logo-dark{ display: inline-block; }
   color: inherit;
   font-weight: 600;
 }
-
+.angie-navbar{ position: relative; }
 /* =========================
-   Menú móvil desplegable
+   Menú móvil desplegable + backdrop
 ========================= */
-@media (max-width: 768px){
+@media (max-width: 767.98px){
 
   .nav-toggle{ display: block; }
+
+  /* backdrop: captura clicks fuera */
+  .nav-backdrop{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: transparent; /* si quieres sombra: rgba(0,0,0,.15) */
+    z-index: 1020;
+    pointer-events: none;
+  }
+  .nav-backdrop.active{
+    display: block;
+    pointer-events: auto;
+  }
 
   .nav-menu{
     position: absolute;
     left: 0;
     right: 0;
-    top: 100%;                   /* CLAVE: justo debajo del navbar */
+    top: 100%;
     width: 100%;
-    display: none;               /* cerrado por defecto */
+    display: none;
     flex-direction: column;
     padding: .75rem 0;
     text-align: center;
+    z-index: 1031; /* arriba del backdrop */
   }
 
-  /* Fondo según tema */
   html[data-bs-theme="light"] .nav-menu{
     background-color: rgba(255,255,255,0.92);
     color: #222;
@@ -178,7 +183,6 @@ html[data-bs-theme="dark"] .logo-dark{ display: inline-block; }
 
 .lang-switch:focus{
   outline: none;
-  /* si ya no usas turquesa, ajusta este glow a #bad200 */
   box-shadow: 0 0 0 .25rem rgba(186,210,0,.25);
 }
 
@@ -210,11 +214,8 @@ html[data-bs-theme="dark"] .lang-switch{
   border-color: rgba(255,255,255,.2);
 }
 
-/* =========================
-   Fix Tablet (iPad) botones
-========================= */
+/* Tablet */
 @media (min-width: 768px) and (max-width: 991.98px){
-
   .nav-container > .d-flex{
     flex-wrap: nowrap !important;
     gap: .4rem !important;
@@ -253,12 +254,3 @@ html[data-bs-theme="dark"] .lang-switch{
     font-size: .7rem !important;
   }
 }
-
-/* menú cerrado por defecto en móvil */
-@media (max-width: 767.98px){
-  .nav-menu{ display: none; }
-  .nav-menu.is-open{ display: block; }
-}
-
-
-
