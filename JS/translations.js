@@ -98,26 +98,62 @@ window.translations = {
     },
 
     // Featured
-    featured: {
-      title: "Productos destacados",
-      subtitle: "Una selección de diseños para que conozcas el estilo de Maíz Fundido.",
-      buttons: {
-        ig: "Ver en Instagram",
-        quote: "Pedir cotización",
-      },
-      items: {
-        p1: { title: "Accesorio destacado", badge: "Nuevos", desc: "Diseño ligero, detallado y listo para uso diario.", aria: "Ver en Instagram" },
-        p2: { title: "Accesorio indispensable", badge: "Indispensables", desc: "Un básico que combina con todo y es súper ligero.", aria: "Ver en Instagram" },
-        p3: { title: "Pieza personalizada", badge: "Personalizados", desc: "Podemos adaptar colores, temática o detalles según tu idea.", aria: "Ver en Instagram" },
-        p4: { title: "Coleccionable", badge: "Coleccionables", desc: "Ideal para fans: edición temática o por temporada.", aria: "Ver en Instagram" },
-      },
+featured: {
+  title: "Productos destacados",
+  subtitle: "Una selección de diseños para que conozcas el estilo de Maíz Fundido.",
+
+  buttons: {
+    ig: "Ver en Instagram",
+    quote: "Pedir cotización"
+  },
+
+  items: {
+    p1: {
+      aria: "Ver dock Charmander para Nintendo Switch 1 en Instagram",
+      title: "Dock para Nintendo Switch 1: Charmander",
+      badge: "Geeks",
+      desc: "Impresión 3D pintada a mano, con puertos HDMI y centro de carga. Tenemos varios Pokémon y personajes de Nintendo."
     },
+    p2: {
+      aria: "Ver llaveritos Bubu y Dudu en Instagram",
+      title: "Llaveritos indispensables: Bubu y Dudu",
+      badge: "Imperdibles",
+      desc: "Llaveros impresos en 3D para no perder tus llaves. Un accesorio cute para dejarlas siempre en el mismo lugar… y que te acuerdes de tu persona favorita."
+    },
+    p3: {
+      aria: "Ver dock de Mai Sakurajima para Nintendo Switch 1 en Instagram",
+      title: "Docks personalizados: Mai Sakurajima",
+      badge: "Personalizados",
+      desc: "Dock para Nintendo Switch 1, impresión 3D pintada a mano, con puertos HDMI y centro de carga."
+    },
+    p4: {
+      aria: "Ver lámparas Bulbasaur fanart en Instagram",
+      title: "Lámparas coleccionables: Bulbasaur (fanart)",
+      badge: "Coleccionables",
+      desc: "Ediciones: Bulbasaur original, Halloween/Día de Muertos y Navidad. Impresión 3D pintada a mano, luz LED y conexión por cable USB a la electricidad."
+    },
+    p5: {
+      aria: "Ver aretes de Hollow Knight, Pompompurin y BTS en Instagram",
+      title: "Aretes lindos: Hollow Knight, Pompompurin y BTS",
+      badge: "Nuevos",
+      desc: "Accesorios que se venden súper bien: aretes con vibe gamer + kawaii + k-pop. Diseño ligero, detallado y listo para uso diario. Postes de acero inoxidable hipoalergénico."
+    },
+    p6: {
+      aria: "Ver calendarios de adviento temáticos en Instagram",
+      title: "Calendarios de Adviento Temáticos",
+      badge: "Para regalar",
+      desc: "Elegimos 25 piezas según la temática. Por el momento contamos con: navideño, Halloween/Día de Muertos, animalitos y plantas, y uno general de “un poco de todo”."
+    }
+  }
+},
 
 
-    earring: {
-      title: "Catálogo de aretes",
-      subtitle: "Explora nuestros aretes impresos en 3D: ligeros, detallados y armados a mano. Pide por DM o solicita cotización."
-    },
+  // ES
+earring: {
+  title: "Catálogo de aretes",
+  subtitle: "Explora nuestros aretes impresos en 3D: ligeros, detallados y armados a mano. Pide por DM o solicita cotización.",
+  catalogLink: "Catálogo de Aretes"
+},
 
     faq: {
       title: "Preguntas frecuentes",
@@ -170,7 +206,7 @@ window.translations = {
 
         q5: {
           aria: "Pregunta frecuente: stock y productos agotados",
-          q: "¿Qué pasa si un producto está agotado o era de temporada?",
+          q: "¿Qué pasa si un producto está agotado o fuera de temporada?",
           tag: "Stock",
           a:
             'Si un diseño está agotado, muchas veces podemos <strong>reimprimirlo</strong> o hacer una versión similar. ' +
@@ -416,27 +452,60 @@ window.translations = {
         c8: { title: "Custom orders", desc: "Names, themes, gifts, and even QR pieces (depending on the design).", badge: "Made to order" },
       },
     },
+// Featured (EN)
+featured: {
+  title: "Featured products",
+  subtitle: "A selection of designs so you can get to know Maíz Fundido’s style.",
 
-    featured: {
-      title: "Featured products",
-      subtitle: "A selection of designs so you can get to know the Maíz Fundido style.",
-      buttons: {
-        ig: "View on Instagram",
-        quote: "Request a quote",
-      },
-      items: {
-        p1: { title: "Featured piece", badge: "New", desc: "Lightweight, detailed, and ready for everyday use.", aria: "View on Instagram" },
-        p2: { title: "Must-have", badge: "Must-haves", desc: "A staple that matches everything and feels super light.", aria: "View on Instagram" },
-        p3: { title: "Custom piece", badge: "Custom", desc: "We can adapt colors, theme, or details based on your idea.", aria: "View on Instagram" },
-        p4: { title: "Collectible", badge: "Collectibles", desc: "Perfect for fans: themed or seasonal editions.", aria: "View on Instagram" },
-      },
+  buttons: {
+    ig: "View on Instagram",
+    quote: "Request a quote"
+  },
+
+  items: {
+    p1: {
+      aria: "View Charmander Nintendo Switch 1 dock on Instagram",
+      title: "Nintendo Switch 1 dock: Charmander",
+      badge: "Geeks",
+      desc: "3D printed and hand-painted, with HDMI ports and a charging dock. We have several Pokémon and Nintendo characters."
     },
-
+    p2: {
+      aria: "View Bubu & Dudu keychains on Instagram",
+      title: "Must-have keychains: Bubu & Dudu",
+      badge: "Must-haves",
+      desc: "3D-printed keychains so you don’t lose your keys. A cute accessory to keep them in the same place… and a sweet reminder of your favorite person."
+    },
+    p3: {
+      aria: "View Mai Sakurajima Nintendo Switch 1 dock on Instagram",
+      title: "Custom docks: Mai Sakurajima",
+      badge: "Custom",
+      desc: "Nintendo Switch 1 dock, 3D printed and hand-painted, with HDMI ports and a charging dock."
+    },
+    p4: {
+      aria: "View Bulbasaur fanart lamps on Instagram",
+      title: "Collectible lamps: Bulbasaur (fanart)",
+      badge: "Collectibles",
+      desc: "Editions: original Bulbasaur, Halloween/Day of the Dead, and Christmas. 3D printed and hand-painted, LED light, and USB cable connection to power."
+    },
+    p5: {
+      aria: "View Hollow Knight, Pompompurin & BTS earrings on Instagram",
+      title: "Cute earrings: Hollow Knight, Pompompurin & BTS",
+      badge: "New",
+      desc: "Best-sellers: earrings with a gamer + kawaii + k-pop vibe. Lightweight, detailed, and ready for everyday wear. Hypoallergenic stainless-steel posts."
+    },
+    p6: {
+      aria: "View themed advent calendars on Instagram",
+      title: "Themed Advent Calendars",
+      badge: "Gift idea",
+      desc: "We select 25 pieces based on the theme. For now we offer: Christmas, Halloween/Day of the Dead, animals & plants, and a “mix of everything” option."
+    }
+  }
+},
     earring: {
       title: "Earring catalog",
-      subtitle: "Browse our 3D-printed earrings: lightweight, detailed, and hand-assembled. Order via DM or request a quote."
+      subtitle: "Browse our 3D-printed earrings: lightweight, detailed, and hand-assembled. Order via DM or request a quote.",
+      catalogLink: "Earrings Catalog"
     },
-
 
     faq: {
       title: "Frequently asked questions",
@@ -489,7 +558,7 @@ window.translations = {
 
         q5: {
           aria: "FAQ: out of stock and seasonal items",
-          q: "What if an item is out of stock or seasonal?",
+          q: "What if an item is out of stock or out of season?",
           tag: "Stock",
           a:
             'If a design is out of stock, we can often <strong>reprint it</strong> or make a similar version. ' +

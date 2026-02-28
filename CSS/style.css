@@ -223,6 +223,8 @@ main{
   display: block;
 }
 
+
+
 /* ======================================
    6.1. ARETES – Canva embed (responsive + bonito)
 ====================================== */
@@ -801,6 +803,25 @@ html[data-bs-theme="dark"] .mf-side-img{
   background: rgba(46, 204, 113, .14);
   border-color: rgba(46, 204, 113, .34);
 }
+
+/* Geek = mismo color que "Nuevos" */
+.badge-mf--geek{
+  color: #5b2a86;
+  background: rgba(155, 89, 182, .16);
+  border-color: rgba(155, 89, 182, .42);
+}
+
+/* Para regalar = mismo color que "Imperdible" */
+.badge-mf--gift{
+  color: #8a5a00;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 214, 102, .22),
+    rgba(255, 169, 77, .12)
+  );
+  border-color: rgba(255, 204, 92, .44);
+}
+
 
 /* Dark mode: sube contraste sin cambiar “la idea” del color */
 html[data-bs-theme="dark"] .badge-mf{
