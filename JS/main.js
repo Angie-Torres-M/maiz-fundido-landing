@@ -1,5 +1,8 @@
 // ======================================================
-// main.js - Lógica global del sitio
+// main.js - Lógica global del sitio (CORREGIDO)
+// - i18n consistente (localStorage + <html lang>)
+// - ver más/menos se actualiza al cambiar idioma SIN click extra
+// - evita doble-bind de listeners
 // ======================================================
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -11,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   initTheme();
   initThemeButtons();
 
-  // 3) Re-aplicar i18n (porque header/footer se inyectaron después)
+  // 3) i18n inicial (porque header/footer se inyectaron después)
   refreshI18n();
 
   // 4) Ver más/menos (después de i18n)
@@ -38,6 +41,18 @@ async function includeHTML(selector, url) {
 }
 
 // ==============================
+// Lang helpers (single source of truth)
+// ==============================
+function getLang() {
+  const lang = (localStorage.getItem("lang") || document.documentElement.lang || "es").toLowerCase();
+  return lang.startsWith("en") ? "en" : "es";
+}
+
+function syncHtmlLang(lang) {
+  document.documentElement.lang = lang;
+}
+
+// ==============================
 // Theme
 // ==============================
 function initTheme() {
@@ -57,7 +72,7 @@ function updateThemeToggleText(theme) {
     const textSpan = toggleBtn?.querySelector("span");
     if (!icon) return;
 
-    const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
+    const lang = getLang();
     const darkLabel = getT(lang, "theme.dark") ?? (lang === "en" ? "Dark mode" : "Modo oscuro");
     const lightLabel = getT(lang, "theme.light") ?? (lang === "en" ? "Light mode" : "Modo claro");
 
@@ -101,47 +116,59 @@ function initThemeButtons() {
 }
 
 // ==============================
-// Ver más / Ver menos (traducible)
+// Ver más / Ver menos (con data-text-* + i18n:refresh)
+// Requiere en HTML:
+// data-text-more-es / data-text-less-es / data-text-more-en / data-text-less-en
 // ==============================
 function initVerMasButtons() {
-  const buttons = document.querySelectorAll('[data-toggle="ver-mas"]');
+  const more = document.getElementById("history-more");
+  const btn = document.getElementById("historyToggleBtn");
+  if (!more || !btn) return;
 
-  buttons.forEach((btn) => {
-    const targetId = btn.getAttribute("data-target");
-    const target = document.getElementById(targetId);
-    if (!target) return;
+  function render() {
+    const lang = getLang();
+    const isExpanded = more.classList.contains("show");
+    const attr = isExpanded ? `data-text-less-${lang}` : `data-text-more-${lang}`;
+    btn.textContent = btn.getAttribute(attr) || (isExpanded ? "Ver menos" : "Ver más");
+  }
 
-    if (btn.dataset.bound) return;
+  // Evitar doble bind
+  if (btn.dataset.bound === "true") {
+    render();
+    return;
+  }
 
-    btn.addEventListener("click", () => {
-      const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
-      const labelMore = getT(lang, "buttons.more") ?? (lang === "en" ? "Show more" : "Ver más");
-      const labelLess = getT(lang, "buttons.less") ?? (lang === "en" ? "Show less" : "Ver menos");
+  more.addEventListener("shown.bs.collapse", render);
+  more.addEventListener("hidden.bs.collapse", render);
 
-      const isHidden = target.classList.contains("d-none");
-
-      if (isHidden) {
-        target.classList.remove("d-none");
-        btn.textContent = labelLess;
-      } else {
-        target.classList.add("d-none");
-        btn.textContent = labelMore;
-      }
-    });
-
-    btn.dataset.bound = "true";
+  // Cuando cambias idioma (sin click extra)
+  document.addEventListener("i18n:refresh", () => {
+    render();
   });
+
+  btn.dataset.bound = "true";
+  render();
 }
 
 // ==============================
 // i18n refresh after injecting header/footer
+// - Asegura que <html lang> y localStorage estén alineados
+// - Re-bindea toggles del header/footer inyectado
+// - Dispara evento único para que otros componentes se actualicen
 // ==============================
 function refreshI18n() {
-  const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
+  const lang = getLang();
 
+  // Alinear <html lang> (importante para cualquier lógica que lo use)
+  syncHtmlLang(lang);
+
+  // Traduce contenido
   if (typeof window.applyLanguage === "function") window.applyLanguage(lang);
+
+  // Re-bind de toggles (header/footer recién inyectados)
   if (typeof window.bindLangToggles === "function") window.bindLangToggles();
 
+  // Un solo evento (para alt, ver-mas, theme labels, etc.)
   document.dispatchEvent(new CustomEvent("i18n:refresh", { detail: { lang } }));
 }
 
@@ -157,10 +184,10 @@ function getT(lang, path) {
 }
 
 // ==============================
-// ALT i18n (FIX: lang estaba fuera de scope)
+// ALT i18n
 // ==============================
 function refreshAltI18n() {
-  const lang = localStorage.getItem("lang") || document.documentElement.lang || "es";
+  const lang = getLang();
   document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
     const key = el.dataset.i18nAlt;
     const t = getT(lang, key);
@@ -168,7 +195,13 @@ function refreshAltI18n() {
   });
 }
 
-document.addEventListener("i18n:refresh", refreshAltI18n);
+document.addEventListener("i18n:refresh", () => {
+  refreshAltI18n();
+
+  // También refresca labels del toggle de tema (porque dependen de lang)
+  const currentTheme = document.documentElement.getAttribute("data-bs-theme") || "light";
+  updateThemeToggleText(currentTheme);
+});
 
 // ==============================
 // Menú hamburguesa (móvil) + backdrop
@@ -179,6 +212,10 @@ function initMobileMenu() {
   const backdrop = document.getElementById("navBackdrop");
 
   if (!toggle || !menu || !backdrop) return;
+
+  // Evitar doble bind
+  if (toggle.dataset.bound === "true") return;
+  toggle.dataset.bound = "true";
 
   const OPEN_CLASS = "active";
 
@@ -216,7 +253,4 @@ function initMobileMenu() {
 
   // Resize a desktop -> cerrar
   window.matchMedia("(min-width: 768px)").addEventListener("change", () => close());
-
-  // Opcional: si haces scroll y está abierto, cierra
-  // window.addEventListener("scroll", () => { if (isOpen()) close(); }, { passive: true });
 }

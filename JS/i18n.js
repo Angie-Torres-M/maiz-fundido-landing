@@ -40,6 +40,8 @@ function applyLanguage(lang) {
 
   const btnMobile = document.getElementById("lang-toggle-mobile");
   if (btnMobile) btnMobile.classList.toggle("is-en", lang === "en");
+
+  applySeoMeta(lang);
 }
 
 function bindLangToggles() {
@@ -84,21 +86,30 @@ document.addEventListener("i18n:refresh", (e) => {
 
 
 
-(() => {
-  const btn = document.getElementById("historyToggleBtn");
-  const more = document.getElementById("history-more");
-  if (!btn || !more) return;
+// SEO Básico
+function applySeoMeta(lang) {
+  const tRoot = window.translations?.[lang];
+  if (!tRoot) return;
 
-  const keyMore = btn.getAttribute("data-i18n") || "";
-  const keyLess = btn.getAttribute("data-i18n-alt-text") || "";
+  const title = getNestedTranslation(tRoot, "meta.title") || "Maíz Fundido";
+  const desc =
+    getNestedTranslation(tRoot, "meta.description") ||
+    "Accesorios y piezas impresas en 3D, armadas a mano en México. Diseños cute/geek, colecciones temáticas y pedidos personalizados.";
 
-  const setLabel = (expanded) => {
-    // si tu i18n.js ya traduce, usamos el texto actual como fallback
-    const moreText = btn.dataset.moreText || btn.textContent || "Ver más";
-    const lessText = btn.dataset.lessText || "Ver menos";
-    btn.textContent = expanded ? lessText : moreText;
-  };
+  document.title = title;
 
-  more.addEventListener("shown.bs.collapse", () => setLabel(true));
-  more.addEventListener("hidden.bs.collapse", () => setLabel(false));
-})();
+  const descEl = document.getElementById("meta-description");
+  if (descEl) descEl.setAttribute("content", desc);
+
+  const canonical = document.getElementById("canonical");
+  if (canonical) canonical.setAttribute("href", "https://maizfundido.pages.dev/");
+
+  const ogUrl = document.getElementById("og-url");
+  if (ogUrl) ogUrl.setAttribute("content", "https://maizfundido.pages.dev/");
+
+  const ogTitle = document.getElementById("og-title");
+  if (ogTitle) ogTitle.setAttribute("content", title);
+
+  const ogDesc = document.getElementById("og-description");
+  if (ogDesc) ogDesc.setAttribute("content", desc);
+}

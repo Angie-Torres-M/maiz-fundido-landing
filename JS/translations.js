@@ -3,6 +3,7 @@ window.translations = {
   es: {
     meta: {
       title: "Maíz Fundido",
+      description: "Accesorios y piezas impresas en 3D, armadas a mano en México. Diseños cute/geek, colecciones temáticas y pedidos personalizados."
     },
 
     // Header / Nav
@@ -31,6 +32,8 @@ window.translations = {
       dark: "Modo oscuro",
       light: "Modo claro",
     },
+
+    //seo basico
 
     // Hero
     hero: {
@@ -186,7 +189,7 @@ earring: {
           tag: "Envíos",
           a:
             'Hacemos <strong>envíos nacionales</strong> y, si lo necesitas, revisamos <strong>internacionales</strong> por cotización.<br>' +
-            '<strong>Costos guía:</strong> CDMX desde <strong>$80</strong> / resto desde <strong>$180</strong>. ' +
+            '<strong>Costos guía:</strong> CDMX desde <strong>$50</strong> / resto desde <strong>$180</strong>. ' +
             'Internacional desde <strong>$380</strong> (varía por país y tamaño). Cotizamos con tu <strong>código postal</strong> y el tamaño del pedido.<br>' +
             'También ofrecemos <strong>entregas gratis en metro CDMX</strong> (según condiciones: estación, horario y/o monto mínimo). ' +
             'Te confirmamos disponibilidad por DM. <strong>Tolerancia: 15 min</strong>.'
@@ -199,7 +202,7 @@ earring: {
           a:
             'No tenemos tienda propia, pero sí estamos en <strong>puntos de venta</strong> y bazares por temporadas.<br>' +
             'Actualmente puedes encontrar productos seleccionados en <strong>Libre Liebre mini</strong> (Centro CDMX): ' +
-            '<strong>Dr. Mora #9, Local 4</strong> y <strong>Bolívar #8</strong>. ' +
+            '<strong>Dr. Mora #9, Local 4</strong>. ' +
             'Horario: <strong>todos los días 11:00 am – 8:00 pm</strong>.<br>' +
             'Lo más actualizado lo anunciamos en redes 💛'
         },
@@ -340,15 +343,14 @@ earring: {
       pointsSubtitle: "Productos seleccionados en <strong>Libre Liebre mini</strong> (Centro CDMX):",
       points: {
         addr1: "<strong>Dr. Mora #9, Local 4</strong> — Centro CDMX",
-        addr2: "<strong>Bolívar #8</strong> — Centro CDMX",
-        map: "Ver mapa",
+               map: "Ver mapa",
       },
       storeHours: "<strong>Horario de tienda:</strong> Todos los días 11:00 am – 8:00 pm",
       moreInfoFaq: "Ver más info en Preguntas frecuentes →",
 
       shippingTitle: "Entregas y envíos",
       delivery1: "<strong>Entregas gratis</strong> en metro CDMX (según condiciones)",
-      delivery2: "<strong>Envíos nacionales:</strong> CDMX desde $80 / resto desde $180",
+      delivery2: "<strong>Envíos nacionales:</strong> CDMX desde $50 / resto desde $180",
       delivery3: "<strong>Internacionales:</strong> desde $380 (cotiza con tu CP)",
 
       collabTitle: "¿Quieres colaborar o vender Maiz Fundido en tu tienda?",
@@ -365,6 +367,7 @@ earring: {
   en: {
     meta: {
       title: "Maíz Fundido",
+      description: "Cute, lightweight 3D-printed accessories handmade in Mexico. Themed drops, fan collections, and custom orders."
     },
 
     nav: {
@@ -538,7 +541,7 @@ featured: {
           tag: "Shipping",
           a:
             'We do <strong>domestic shipping</strong> and can check <strong>international</strong> options by quote if needed.<br>' +
-            '<strong>Guide prices:</strong> Mexico City from <strong>$80</strong> / other states from <strong>$180</strong>. ' +
+            '<strong>Guide prices:</strong> Mexico City from <strong>$50</strong> / other states from <strong>$180</strong>. ' +
             'International from <strong>$380</strong> (varies by country and package size). We quote with your <strong>ZIP/CP</strong> and order size.<br>' +
             'We can also offer <strong>free metro meetups in Mexico City</strong> (conditions apply: station, schedule and/or minimum order). ' +
             'We’ll confirm availability by DM. <strong>Grace time: 15 min</strong>.'
@@ -551,7 +554,7 @@ featured: {
           a:
             'We don’t have our own store, but we do sell through <strong>retail points</strong> and seasonal markets.<br>' +
             'Right now you can find selected items at <strong>Libre Liebre mini</strong> (Downtown Mexico City): ' +
-            '<strong>Dr. Mora #9, Local 4</strong> and <strong>Bolívar #8</strong>. ' +
+            '<strong>Dr. Mora #9, Local 4</strong>. ' +
             'Hours: <strong>daily 11:00 am – 8:00 pm</strong>.<br>' +
             'We post the most up-to-date info on our socials 💛'
         },
@@ -703,7 +706,7 @@ featured: {
 
       shippingTitle: "Deliveries & shipping",
       delivery1: "<strong>Free deliveries</strong> at CDMX metro stations (conditions apply)",
-      delivery2: "<strong>National shipping:</strong> CDMX from $80 / rest of Mexico from $180",
+      delivery2: "<strong>National shipping:</strong> CDMX from $50 / rest of Mexico from $180",
       delivery3: "<strong>International:</strong> from $380 (quote with your ZIP)",
 
       collabTitle: "Want to collaborate or sell in your store?",
