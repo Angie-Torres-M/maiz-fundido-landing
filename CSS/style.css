@@ -964,8 +964,7 @@ html[data-bs-theme="dark"] .hero-link-card{
   border-color: var(--dark-border);
 }
 
-html[data-bs-theme="dark"] .hero-link-title{ color: #fff; }
-html[data-bs-theme="dark"] .hero-link-sub{ color: rgba(231,233,238,.75); }
+
 
 html[data-bs-theme="dark"] .hero-link-icon{
   background: rgba(199,214,10,.20);
@@ -1071,7 +1070,7 @@ html[data-bs-theme="dark"] .btn-outline-primary:hover{
 }
 
 .hero-links-grid .hero-link-title{
-  font-weight: 800 !important;
+  font-weight: 500 !important;   /* ← peso normal elegante */
   letter-spacing: .2px !important;
   color: var(--text) !important;
   text-align: center !important;
@@ -1126,6 +1125,7 @@ html[data-bs-theme="dark"] .hero-links-grid .hero-link-card:hover{
 }
 html[data-bs-theme="dark"] .hero-links-grid .hero-link-title{
   color: #E7E9EE !important;
+   font-weight: 500 !important; 
 }
 
 /* Borde más vivo en dark */
