@@ -101,7 +101,32 @@ main{
 .section-alt-mint{
   background-color: var(--mint);
 }
+/* ======================================
+   BOTONES REDES: GRID 2x2 (como quieres)
+====================================== */
+.social-buttons-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
 
+/* Que todos los botones llenen su celda */
+.social-buttons-grid > a.btn{
+  width: 100%;
+}
+
+/* En móvil: 1 columna */
+@media (max-width: 576px){
+  .social-buttons-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (min-width: 768px){
+  .hero-links-grid{ grid-template-columns: 1fr 1fr; }
+}
 /* ======================================
    4. BOTONES / ICONOS SOCIALES
 ====================================== */
@@ -110,6 +135,7 @@ main{
   align-items: center;
   gap: 0.25rem;
 }
+
 
 /* Botón outline primary (pastel) */
 .btn-outline-primary{
@@ -513,61 +539,7 @@ html[data-bs-theme="dark"] a.btn.btn-pdf-c *{
   .hero-links-grid{ grid-template-columns: 1fr 1fr; }
 }
 
-.hero-link-card{
-  display: flex;
-  align-items: start;
-  gap: 14px;
-  padding: 16px 16px;
-  border-radius: 16px;
-  text-decoration: none;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,.85);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-}
 
-.hero-link-card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(26,28,32,.08);
-  border-color: rgba(26,28,32,.16);
-}
-
-.hero-link-icon{
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  background: rgba(199,214,10,.16);
-  color: #1A1C20;
-  flex: 0 0 auto;
-}
-
-.hero-link-icon i{ font-size: 1.2rem; }
-
-.hero-link-text{
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  min-width: 0;
-}
-
-.hero-link-title{
-  font-weight: 900;
-  letter-spacing: .2px;
-  color: #1A1C20;
-  text-align: start;
-}
-
-.hero-link-sub{
-  font-size: .92rem;
-  color: rgba(26,28,32,.62);
-      text-align: start;
-}
-
-.hero-link-arrow{
-  margin-left: auto;
-  opacity: .6;
-}
 
 /* ======================================
    9. FAQ – Maíz Fundido (cute)
@@ -1014,4 +986,170 @@ html[data-bs-theme="dark"] .btn-outline-primary{
 html[data-bs-theme="dark"] .btn-outline-primary:hover{
   background: rgba(199,214,10,.20) !important;
   border-color: rgba(199,214,10,.90) !important;
+}
+
+
+
+/* =========================================================
+   HERO LINKS (INICIO) — EXACTO tipo “píldoras” del screenshot
+   - Fondo gris tenue
+   - Borde del color por red
+   - Ícono del color por red
+   - Texto negro centrado
+   - SIN subtítulo
+   - SIN flechita
+========================================================= */
+
+/* Grid igual al screenshot: una columna, centrado, ancho bonito */
+.hero-links-grid{
+  display: grid;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* La “card” ahora es botón píldora */
+.hero-links-grid .hero-link-card{
+  width: 100%;
+  min-height: 56px;
+  border-radius: 999px !important;
+  border: 2px solid rgba(26,28,32,.18) !important;
+
+  background: rgba(26, 28, 32, .06) !important; /* gris tenue */
+  box-shadow: none !important;
+
+  padding: 12px 18px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+
+  text-decoration: none !important;
+  transform: none !important;
+}
+
+/* Hover súper sutil como el template */
+.hero-links-grid .hero-link-card:hover{
+  background: rgba(26, 28, 32, .08) !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* Ocultar subtítulo y flecha (para que quede igual al screenshot) */
+.hero-links-grid .hero-link-sub,
+.hero-links-grid .hero-link-arrow{
+  display: none !important;
+}
+
+/* Quitar “cajita” del icono: solo el icono */
+.hero-links-grid .hero-link-icon{
+  width: auto !important;
+  height: auto !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  place-items: initial !important;
+  color: inherit !important;
+}
+
+/* Icono tamaño */
+.hero-links-grid .hero-link-icon i{
+  font-size: 1.25rem !important;
+}
+
+/* Texto centrado como el screenshot */
+.hero-links-grid .hero-link-text{
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  min-width: 0 !important;
+}
+
+.hero-links-grid .hero-link-title{
+  font-weight: 800 !important;
+  letter-spacing: .2px !important;
+  color: var(--text) !important;
+  text-align: center !important;
+  line-height: 1.1 !important;
+}
+
+/* =========================
+   COLORES por red (según orden de tus 4 links)
+   1 IG, 2 FB, 3 TikTok, 4 IG Juegos (dado)
+========================= */
+
+/* Instagram */
+.hero-links-grid .hero-link-card:nth-child(1){
+  border-color: rgba(231, 95, 182, .75) !important;
+}
+.hero-links-grid .hero-link-card:nth-child(1) .hero-link-icon{
+  color: #E75FB6 !important;
+}
+
+/* Facebook */
+.hero-links-grid .hero-link-card:nth-child(2){
+  border-color: rgba(47, 99, 224, .70) !important;
+}
+.hero-links-grid .hero-link-card:nth-child(2) .hero-link-icon{
+  color: #2F63E0 !important;
+}
+
+/* TikTok */
+.hero-links-grid .hero-link-card:nth-child(3){
+  border-color: rgba(54, 215, 205, .70) !important;
+}
+.hero-links-grid .hero-link-card:nth-child(3) .hero-link-icon{
+  color: #36D7CD !important;
+}
+
+/* Instagram Juegos (dado) */
+.hero-links-grid .hero-link-card:nth-child(4){
+  border-color: rgba(46, 204, 113, .70) !important;
+}
+.hero-links-grid .hero-link-card:nth-child(4) .hero-link-icon{
+  color: #2ECC71 !important;
+}
+
+/* =========================
+   DARK MODE (misma idea, pero gris oscuro)
+========================= */
+html[data-bs-theme="dark"] .hero-links-grid .hero-link-card{
+  background: rgba(255,255,255,.06) !important;
+}
+html[data-bs-theme="dark"] .hero-links-grid .hero-link-card:hover{
+  background: rgba(255,255,255,.08) !important;
+}
+html[data-bs-theme="dark"] .hero-links-grid .hero-link-title{
+  color: #E7E9EE !important;
+}
+
+/* Borde más vivo en dark */
+html[data-bs-theme="dark"] .hero-links-grid .hero-link-card:nth-child(1){ border-color: rgba(231,95,182,.90) !important; }
+html[data-bs-theme="dark"] .hero-links-grid .hero-link-card:nth-child(2){ border-color: rgba(47,99,224,.88) !important; }
+html[data-bs-theme="dark"] .hero-links-grid .hero-link-card:nth-child(3){ border-color: rgba(54,215,205,.88) !important; }
+html[data-bs-theme="dark"] .hero-links-grid .hero-link-card:nth-child(4){ border-color: rgba(46,204,113,.88) !important; }
+
+/* Grid: móvil 1 columna, desktop 2 columnas (2 y 2) */
+.hero-links-grid{
+  display: grid;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+
+  /* centrado y ancho bonito */
+  max-width: 820px;            /* más ancho para que quepan 2 */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Desktop: 2 columnas */
+@media (min-width: 768px){
+  .hero-links-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+  }
 }

@@ -43,10 +43,10 @@ window.translations = {
         "Accesorios y piezas impresas en 3D, con detalle artesanal y hechas en México. Diseños para fans, colecciones temáticas y pedidos personalizados.",
       note: "También hacemos pedidos personalizados.",
       links: {
-        ig: { title: "Instagram", sub: "Novedades, eventos y pedidos", aria: "Instagram Maíz Fundido" },
-        fb: { title: "Facebook", sub: "Novedades y eventos", aria: "Facebook Maíz Fundido" },
-        tt: { title: "TikTok", sub: "Novedades y videos", aria: "TikTok Maíz Fundido" },
-        games: { title: "Instagram · Juegos", sub: "Accesorios para juegos de mesa", aria: "Instagram Juegos Maíz Fundido" },
+        ig: { title: "Instagram", aria: "Instagram Maíz Fundido" },
+        fb: { title: "Facebook", aria: "Facebook Maíz Fundido" },
+        tt: { title: "TikTok",  aria: "TikTok Maíz Fundido" },
+        games: { title: "Instagram · Juegos",  aria: "Instagram Juegos Maíz Fundido" },
       },
     },
 
@@ -401,10 +401,10 @@ earring: {
         "3D-printed accessories and pieces, with handmade detail and made in Mexico. Designs for fans, themed collections, and custom orders.",
       note: "We also take custom orders.",
       links: {
-        ig: { title: "Instagram", sub: "New drops, events & orders", aria: "Maíz Fundido Instagram" },
-        fb: { title: "Facebook", sub: "News and events", aria: "Maíz Fundido Facebook" },
-        tt: { title: "TikTok", sub: "News and videos", aria: "Maíz Fundido TikTok" },
-        games: { title: "Instagram · Games", sub: "Boardgame accessories", aria: "Maíz Fundido Games Instagram" },
+        ig: { title: "Instagram",  aria: "Maíz Fundido Instagram" },
+        fb: { title: "Facebook", aria: "Maíz Fundido Facebook" },
+        tt: { title: "TikTok",  aria: "Maíz Fundido TikTok" },
+        games: { title: "Instagram · Games", aria: "Maíz Fundido Games Instagram" },
       },
     },
 

@@ -105,27 +105,57 @@ html[data-bs-theme="dark"] footer.footer img.logo-dark{ display: block !importan
 /* =============================
    Redes sociales (botones redondos)
 ============================= */
+/* =============================
+   Redes sociales (botones redondos) — SOLO ICONO + BORDE DEL COLOR
+============================= */
+
+/* Tamaño y forma base */
 footer.footer .nav-social .social-link{
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  border: 1px solid rgba(26,28,32,.12);
-  background: rgba(255,255,255,.6);
-  transition: transform .15s ease, background-color .15s ease, border-color .15s ease;
-  color: var(--text) !important;
+  text-decoration: none;
+  background: transparent !important;
+
+  border: 2px solid currentColor; /* el borde hereda el color */
+  color: var(--text); /* fallback, se sobreescribe por red */
+
+  transition: transform .15s ease, background-color .15s ease, border-color .15s ease, filter .15s ease;
 }
+
+/* Icono */
 footer.footer .nav-social .social-link i{
   font-size: 1.25rem;
-  color: currentColor !important;
+  color: currentColor !important; /* icono = color del link */
 }
+
+/* Hover “cute” */
 footer.footer .nav-social .social-link:hover{
   transform: translateY(-1px);
-  background: var(--social-bg-hover);
-  border-color: rgba(226, 138, 168, .40);
-  color: var(--social-hover) !important;
+  background-color: color-mix(in srgb, currentColor 14%, transparent) !important;
+  filter: brightness(0.98);
+}
+
+/* Colores por red (solo icono + borde) */
+footer.footer .nav-social .social-link.social-ig{ color: #E75FB6 !important; } /* Instagram */
+footer.footer .nav-social .social-link.social-fb{ color: #2F63E0 !important; } /* Facebook */
+footer.footer .nav-social .social-link.social-tt{ color: #36D7CD !important; } /* TikTok */
+
+
+/* =============================
+   DARK MODE
+============================= */
+html[data-bs-theme="dark"] footer.footer .nav-social .social-link{
+  background: transparent !important;
+  filter: none;
+}
+
+/* Hover en dark: un poquito más visible */
+html[data-bs-theme="dark"] footer.footer .nav-social .social-link:hover{
+  background-color: color-mix(in srgb, currentColor 18%, transparent) !important;
 }
 
 /* =============================
