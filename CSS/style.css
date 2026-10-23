@@ -1153,3 +1153,50 @@ html[data-bs-theme="dark"] .hero-links-grid .hero-link-card:nth-child(4){ border
     gap: 16px !important;
   }
 }
+/* ===== Legales · enlaces discretos en footer ===== */
+.mf-footer-legal{
+  margin: 1.25rem auto .45rem;
+  padding: 1rem 1.35rem;
+  max-width: 1020px;
+  border: 1px solid rgba(125, 161, 145, .25);
+  background: rgba(255,255,255,.55);
+  border-radius: 17px;
+  text-align: center;
+}
+.mf-footer-legal h2{
+  font-size: .94rem;
+  font-weight: 800;
+  margin-bottom: .4rem;
+}
+.mf-footer-legal p{
+  max-width: 760px;
+  margin: 0 auto .65rem;
+  font-size: .87rem;
+  line-height: 1.65;
+}
+.mf-footer-legal-links{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 1.4rem;
+  row-gap: .5rem;
+}
+.mf-footer-legal-links a{
+  font-size: .9rem;
+  font-weight: 700;
+  color: #28665F;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.mf-footer-legal-links a:focus-visible{
+  outline: 3px solid #28665F;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+html[data-bs-theme="dark"] .mf-footer-legal{
+  background: rgba(255,255,255,.055);
+  border-color: rgba(230,244,239,.16);
+}
+html[data-bs-theme="dark"] .mf-footer-legal-links a{
+  color: #A9E2D0;
+}

@@ -360,6 +360,10 @@ earring: {
       supportHoursTitle: "Horario de atención al cliente",
       supportHours: "Lunes a viernes: 10:00 am – 5:00 pm · Sábado: 10:00 am – 12:00 pm",
 
+      legalTitle: "Información legal",
+      legalOAuth: "El correo administrativo de Maíz Fundido utiliza autorización de Google para enviar respuestas y avisos desde la cuenta autorizada. Consulta cómo tratamos tus datos.",
+      privacyLink: "Aviso de privacidad",
+      termsLink: "Términos y condiciones",
       copyright: "© 2026 Maíz Fundido. Todos los derechos reservados. Ciudad de México.",
     },
   },
@@ -716,6 +720,10 @@ featured: {
       supportHoursTitle: "Customer support hours",
       supportHours: "Mon–Fri: 10:00 am – 5:00 pm · Sat: 10:00 am – 12:00 pm",
 
+      legalTitle: "Legal information",
+      legalOAuth: "Maíz Fundido’s administrative email integration uses Google authorization to send replies and notices from the approved account. See how we handle your data.",
+      privacyLink: "Privacy notice",
+      termsLink: "Terms and conditions",
       copyright: "© 2026 Maíz Fundido. All rights reserved. Mexico City.",
     },
   },
